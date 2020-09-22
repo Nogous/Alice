@@ -23,13 +23,11 @@ public class ObjectSpawner : MonoBehaviour
     {
         objectPooler = ObjectPooler.instance;
 
-        ObjectPooler.instance.onPoolsCreated += () =>
+
+        if (!GameManager.instance.onDebugMode)
         {
-            if (!GameManager.instance.onDebugMode)
-            {
-                StartCoroutine(SpawnObjects());
-            }
-        };
+            StartCoroutine(WaitAndSpawnObjects());
+        }
     }
 
     // Update is called once per frame
@@ -39,6 +37,12 @@ public class ObjectSpawner : MonoBehaviour
         {
             StartCoroutine(SpawnObjects());
         }
+    }
+
+    private IEnumerator WaitAndSpawnObjects()
+    {
+            yield return new WaitForSeconds(0.5f);
+            StartCoroutine(SpawnObjects());
     }
 
     private IEnumerator SpawnObjects()
