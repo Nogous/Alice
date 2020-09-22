@@ -16,7 +16,7 @@ public class ObjectSpawner : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private Transform obstacleSpawnPoint;
-    [SerializeField] private Transform obstacleTargetPoint;
+    [SerializeField] PathCreation.PathCreator mainPath;
 
     // Start is called before the first frame update
     void Start()
@@ -50,7 +50,9 @@ public class ObjectSpawner : MonoBehaviour
         GameObject obj = objectPooler.SpawnFromPool(obstacleTags[Random.Range(0, obstacleTags.Length)], 
             new Vector3(obstacleSpawnPoint.position.y + Random.Range(-xOffset, xOffset), obstacleSpawnPoint.position.y + Random.Range(-yOffset, yOffset), obstacleSpawnPoint.position.z), 
             new Vector3(Random.Range(-90, 90), Random.Range(-90, 90), Random.Range(-90, 90)));
-        obj.GetComponent<Obstacle>().target = obstacleTargetPoint;
+        Vector3 newOffset = new Vector3(Random.Range(-xOffset, xOffset), Random.Range(-yOffset, yOffset));
+        obj.GetComponent<Obstacle>().SetChildOffset(newOffset);
+        obj.GetComponent<PathCreation.Examples.PathFollower>().pathCreator = mainPath;
         yield return new WaitForSeconds(Random.Range(minTimeBetweenObstacles, maxTimeBetweenObstacles));
         StartCoroutine(SpawnObjects());
     }
