@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        //Time.timeScale = 1;
     }
 
     // Start is called before the first frame update
