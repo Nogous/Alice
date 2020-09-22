@@ -22,12 +22,20 @@ public class ObjectSpawner : MonoBehaviour
     void Start()
     {
         objectPooler = ObjectPooler.instance;
+
+        ObjectPooler.instance.onPoolsCreated += () =>
+        {
+            if (!GameManager.instance.onDebugMode)
+            {
+                StartCoroutine(SpawnObjects());
+            }
+        };
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.K))
+        if (Input.GetKeyUp(KeyCode.K) && GameManager.instance.onDebugMode)
         {
             StartCoroutine(SpawnObjects());
         }
