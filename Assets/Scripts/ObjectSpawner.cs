@@ -8,11 +8,11 @@ public class ObjectSpawner : MonoBehaviour
     private ObjectPooler objectPooler;
 
     [Header("Parameters")]
-    [SerializeField] private float minTimeBetweenObstacles;
-    [SerializeField] private float maxTimeBetweenObstacles;
+    [SerializeField] private float minTimeBetweenObstacles = 0;
+    [SerializeField] private float maxTimeBetweenObstacles = 1;
     [SerializeField] private string[] obstacleTags;
-    [SerializeField] private int xOffset;
-    [SerializeField] private int yOffset;
+    [SerializeField] private int xOffset = 1;
+    [SerializeField] private int yOffset = 1;
 
     [Header("References")]
     [SerializeField] private Transform obstacleSpawnPoint;
