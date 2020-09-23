@@ -26,7 +26,7 @@ public class MasterPath : MonoBehaviour
     public PathCreation.PathCreator[] paths;
 
     [Header("Values")]
-    [SerializeField] private float spawnerDistance = 20;
+    public float spawnerDistance = 20;
     [SerializeField] private float destroyerDistance = -10;
 
     private void Start()

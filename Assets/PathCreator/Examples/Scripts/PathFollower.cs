@@ -9,8 +9,8 @@ namespace PathCreation.Examples
         public PathCreator pathCreator;
         public EndOfPathInstruction endOfPathInstruction;
         public float speed = 5;
-        float distanceTravelled;
-        private float pathOffset;
+        public float distanceTravelled;
+        public float pathOffset;
 
         void Start() {
             if (pathCreator != null)

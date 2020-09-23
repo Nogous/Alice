@@ -20,4 +20,9 @@ public class Obstacle : MonoBehaviour, IPooledObject
     {
         child.localPosition = offset;
     }
+
+    public void SetChildRotation(Vector3 rotation)
+    {
+        child.localEulerAngles = rotation;
+    }
 }

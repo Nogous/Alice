@@ -2007,6 +2007,8 @@ MonoBehaviour:
   pathCreator: {fileID: 1332622581}
   endOfPathInstruction: 0
   speed: 5
+  distanceTravelled: 0
+  pathOffset: 0
 --- !u!4 &1767554437
 Transform:
   m_ObjectHideFlags: 0
@@ -2646,5 +2648,15 @@ PrefabInstance:
       propertyPath: pathCreator
       value: 
       objectReference: {fileID: 1332622581}
+    - target: {fileID: 1166471845353755083, guid: 02a26083cf607604d832bd66a0ae821f,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1166471845353755083, guid: 02a26083cf607604d832bd66a0ae821f,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02a26083cf607604d832bd66a0ae821f, type: 3}
