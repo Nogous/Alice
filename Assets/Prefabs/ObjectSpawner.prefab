@@ -43,12 +43,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc2648e1fafdcb64e87afa8587a94fad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minTimeBetweenObstacles: 2
-  maxTimeBetweenObstacles: 5
+  minTimeBetweenObstacles: 1
+  maxTimeBetweenObstacles: 3.5
   obstacleTags:
   - Table
   - TeaCups
-  xOffset: 5
-  yOffset: 5
+  xOffset: 3
+  yOffset: 3
   obstacleSpawnPoint: {fileID: 0}
   mainPath: {fileID: 0}

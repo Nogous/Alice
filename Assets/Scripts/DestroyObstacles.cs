@@ -8,7 +8,7 @@ public class DestroyObstacles : MonoBehaviour
     {
         if (other.CompareTag("Obstacle"))
         {
-            other.gameObject.SetActive(false);
+            other.transform.parent.gameObject.SetActive(false);
         }
     }
 }

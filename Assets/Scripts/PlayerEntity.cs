@@ -4,18 +4,26 @@ using UnityEngine;
 
 public class PlayerEntity : MonoBehaviour
 {
+    #region Script Parameters
+
     [Header("Speed")]
     public float initMoveSpeed = 5f;
     public float moveSpeedMax = 10f;
     public float moveSpeedMin = 1f;
-    private float currentSpeed = 5f;
+    [SerializeField] private float currentSpeed = 5f;
+    public float looseSpeed = .5f;
 
     [Header("life")]
     public int life = 5;
     public float invicibilityFrameDuration = .1f;
     private bool isInvincible = false;
+    public int takeDamage = 1;
 
     private Vector3 movement;
+
+    #endregion
+
+    #region Unity Methods
 
     private void Start()
     {
@@ -35,9 +43,27 @@ public class PlayerEntity : MonoBehaviour
         transform.localPosition += movement * Time.deltaTime * initMoveSpeed;
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("It hurts");
+
+        if (collision.gameObject.tag == "Obstacle")
+        {
+            SpeedDown(looseSpeed);
+            TakeDamage(takeDamage);
+
+            Destroy(collision.gameObject);
+        }
+    }
+
+    #endregion
+
+    #region Damage
+
     private void TakeDamage(int dammage)
     {
         life -= dammage;
+        Debug.LogError(life);
         if (life<= 0)
         {
             GameManager.instance.PlayerDead();
@@ -46,7 +72,10 @@ public class PlayerEntity : MonoBehaviour
         StartCoroutine(InvincibilityStop());
     }
 
-    #region speed
+    #endregion
+
+    #region Speed
+
     public void SpeedDown(float amont)
     {
         currentSpeed -= amont;
@@ -64,6 +93,7 @@ public class PlayerEntity : MonoBehaviour
             currentSpeed = moveSpeedMax;
         }
     }
+
     #endregion
 
     private IEnumerator InvincibilityStop()

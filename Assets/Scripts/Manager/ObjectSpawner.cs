@@ -47,13 +47,24 @@ public class ObjectSpawner : MonoBehaviour
 
     private IEnumerator SpawnObjects()
     {
-        GameObject obj = objectPooler.SpawnFromPool(obstacleTags[Random.Range(0, obstacleTags.Length)], 
-            new Vector3(obstacleSpawnPoint.position.y + Random.Range(-xOffset, xOffset), obstacleSpawnPoint.position.y + Random.Range(-yOffset, yOffset), obstacleSpawnPoint.position.z), 
-            new Vector3(Random.Range(-90, 90), Random.Range(-90, 90), Random.Range(-90, 90)));
-        Vector3 newOffset = new Vector3(Random.Range(-xOffset, xOffset), Random.Range(-yOffset, yOffset));
-        obj.GetComponent<Obstacle>().SetChildOffset(newOffset);
-        obj.GetComponent<PathCreation.Examples.PathFollower>().pathCreator = mainPath;
+        InstantiateObject();
+        yield return new WaitForSeconds(0.3f);
+        InstantiateObject();
         yield return new WaitForSeconds(Random.Range(minTimeBetweenObstacles, maxTimeBetweenObstacles));
         StartCoroutine(SpawnObjects());
+    }
+
+    private void InstantiateObject()
+    {
+        GameObject obj = objectPooler.SpawnFromPool(obstacleTags[Random.Range(0, obstacleTags.Length)],
+            obstacleSpawnPoint.position,
+            Vector3.zero);
+        Vector3 newOffset = new Vector3(Random.Range(-xOffset, xOffset), Random.Range(-yOffset, yOffset));
+        Vector3 newRotation = new Vector3(Random.Range(-90, 90), Random.Range(-90, 90), Random.Range(-90, 90));
+        obj.GetComponent<Obstacle>().SetChildOffset(newOffset);
+        obj.GetComponent<Obstacle>().SetChildRotation(newRotation);
+        obj.GetComponent<PathCreation.Examples.PathFollower>().pathCreator = mainPath;
+        PathCreation.Examples.PathFollower spawnParentFollower = obstacleSpawnPoint.parent.GetComponent<PathCreation.Examples.PathFollower>();
+        obj.GetComponent<PathCreation.Examples.PathFollower>().distanceTravelled = spawnParentFollower.distanceTravelled + spawnParentFollower.pathOffset;
     }
 }
