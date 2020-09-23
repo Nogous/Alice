@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MasterPath : MonoBehaviour
 {
@@ -18,11 +16,25 @@ public class MasterPath : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    
+    [Header("References")]
     public PathCreation.PathCreator mainPath;
     public PathCreation.Examples.PathFollower playerPath;
+    public PathCreation.Examples.PathFollower obstacleSpawner;
+    public PathCreation.Examples.PathFollower obstacleDestroyer;
 
     public PathCreation.PathCreator[] paths;
+
+    [Header("Values")]
+    [SerializeField] private float spawnerDistance = 20;
+    [SerializeField] private float destroyerDistance = -10;
+
+    private void Start()
+    {
+        obstacleSpawner.SetPathOffset(spawnerDistance);
+        
+        obstacleDestroyer.SetPathOffset(destroyerDistance);
+    }
 
     public void SwitchMainPath(int id)
     {
@@ -30,5 +42,11 @@ public class MasterPath : MonoBehaviour
 
         playerPath.SetPathCreator(mainPath);
         playerPath.SetDistanceInPath(0);
+
+        obstacleSpawner.SetPathCreator(mainPath);
+        obstacleSpawner.SetPathOffset(spawnerDistance);
+
+        obstacleDestroyer.SetPathCreator(mainPath);
+        obstacleDestroyer.SetPathOffset(destroyerDistance);
     }
 }

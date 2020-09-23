@@ -10,6 +10,7 @@ namespace PathCreation.Examples
         public EndOfPathInstruction endOfPathInstruction;
         public float speed = 5;
         float distanceTravelled;
+        private float pathOffset;
 
         void Start() {
             if (pathCreator != null)
@@ -24,8 +25,8 @@ namespace PathCreation.Examples
             if (pathCreator != null)
             {
                 distanceTravelled += speed * Time.deltaTime;
-                transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, endOfPathInstruction);
-                transform.rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled, endOfPathInstruction);
+                transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled + pathOffset, endOfPathInstruction);
+                transform.rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled + pathOffset, endOfPathInstruction);
             }
         }
 
@@ -44,6 +45,11 @@ namespace PathCreation.Examples
         {
             transform.position = pathCreator.path.GetPointAtDistance(_distanceTravelled, endOfPathInstruction);
             transform.rotation = pathCreator.path.GetRotationAtDistance(_distanceTravelled, endOfPathInstruction);
+        }
+
+        public void SetPathOffset(float offset)
+        {
+            pathOffset = offset;
         }
     }
 }

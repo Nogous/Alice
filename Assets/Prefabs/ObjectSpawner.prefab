@@ -48,7 +48,7 @@ MonoBehaviour:
   obstacleTags:
   - Table
   - TeaCups
-  xOffset: 9
-  yOffset: 8
+  xOffset: 5
+  yOffset: 5
   obstacleSpawnPoint: {fileID: 0}
-  obstacleTargetPoint: {fileID: 0}
+  mainPath: {fileID: 0}
