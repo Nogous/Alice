@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using PathCreation.Examples;
 using UnityEngine;
 
 public class PlayerEntity : MonoBehaviour
@@ -10,6 +11,7 @@ public class PlayerEntity : MonoBehaviour
     public float initMoveSpeed = 5f;
     public float moveSpeedMax = 10f;
     public float moveSpeedMin = 1f;
+    public float acceleration = .5f;
     [SerializeField] private float currentSpeed = 5f;
     public float looseSpeed = .5f;
 
@@ -20,6 +22,9 @@ public class PlayerEntity : MonoBehaviour
     public int takeDamage = 1;
 
     private Vector3 movement;
+
+    [Header("PathFollowers")]
+    public List<PathFollower> followers;
 
     #endregion
 
@@ -38,6 +43,16 @@ public class PlayerEntity : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (currentSpeed < moveSpeedMax)
+        {
+            currentSpeed += acceleration * Time.fixedDeltaTime;
+        }
+
+        foreach(PathFollower follower in followers)
+        {
+            follower.speed = currentSpeed;
+        }
+
         if (movement == Vector3.zero) return;
 
         transform.localPosition += movement * Time.deltaTime * initMoveSpeed;

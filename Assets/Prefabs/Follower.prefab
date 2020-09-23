@@ -288,8 +288,12 @@ MonoBehaviour:
   initMoveSpeed: 5
   moveSpeedMax: 10
   moveSpeedMin: 1
+  acceleration: 0.5
+  currentSpeed: 5
+  looseSpeed: 0.5
   life: 5
   invicibilityFrameDuration: 0.1
+  takeDamage: 1
 --- !u!114 &178229758
 MonoBehaviour:
   m_ObjectHideFlags: 0
