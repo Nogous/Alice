@@ -2567,6 +2567,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6513487529825679567, guid: e82ac93fb9c83dc4a8a3e0342605bd36,
+        type: 3}
+      propertyPath: onDebugMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6965514348251807171, guid: e82ac93fb9c83dc4a8a3e0342605bd36,
         type: 3}
       propertyPath: obstacleSpawnPoint
