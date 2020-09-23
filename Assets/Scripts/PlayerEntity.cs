@@ -26,6 +26,10 @@ public class PlayerEntity : MonoBehaviour
     [Header("PathFollowers")]
     public List<PathFollower> followers;
 
+    public Camera cam;
+    public Vector3 offsetRotationAlice;
+    private float offsetCamToAlice;
+
     #endregion
 
     #region Unity Methods
@@ -33,12 +37,15 @@ public class PlayerEntity : MonoBehaviour
     private void Start()
     {
         currentSpeed = initMoveSpeed;
+        offsetCamToAlice = cam.transform.localPosition.z;
     }
 
     private void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+
+        UpdateRotation();
     }
 
     private void FixedUpdate()
@@ -78,7 +85,7 @@ public class PlayerEntity : MonoBehaviour
     private void TakeDamage(int dammage)
     {
         life -= dammage;
-        Debug.LogError(life);
+        //Debug.LogError(life);
         if (life<= 0)
         {
             GameManager.instance.PlayerDead();
@@ -110,6 +117,24 @@ public class PlayerEntity : MonoBehaviour
     }
 
     #endregion
+
+    void UpdateRotation()
+    {
+        Vector3 mouseWorldPos = cam.ScreenToWorldPoint(new Vector3( Screen.width-Input.mousePosition.x, Screen.height- Input.mousePosition.y, offsetCamToAlice));
+
+        Vector3 difference = (mouseWorldPos - transform.position).normalized;
+
+        // passage en repere d'alice
+        difference = transform.parent.transform.InverseTransformDirection(difference);
+
+        float angleX = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+
+        transform.localEulerAngles = new Vector3(angleX, 0, 0) + offsetRotationAlice;
+
+        Debug.DrawRay(mouseWorldPos, Vector3.one, Color.blue);
+    }
+
+    
 
     private IEnumerator InvincibilityStop()
     {
