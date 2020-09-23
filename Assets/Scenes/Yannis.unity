@@ -1578,6 +1578,8 @@ MonoBehaviour:
   pathCreator: {fileID: 135027742}
   endOfPathInstruction: 0
   speed: 5
+  distanceTravelled: 0
+  pathOffset: 0
 --- !u!1 &1083509945
 GameObject:
   m_ObjectHideFlags: 0
@@ -1932,17 +1934,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 178229756, guid: 761d600d1e80341ac97f3228771ce637, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
+    - target: {fileID: 178229757, guid: 761d600d1e80341ac97f3228771ce637, type: 3}
+      propertyPath: followers.Array.size
+      value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 529321322, guid: 761d600d1e80341ac97f3228771ce637, type: 3}
-      propertyPath: m_RootOrder
+    - target: {fileID: 178229757, guid: 761d600d1e80341ac97f3228771ce637, type: 3}
+      propertyPath: looseSpeed
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1284325426, guid: 761d600d1e80341ac97f3228771ce637, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
+    - target: {fileID: 178229757, guid: 761d600d1e80341ac97f3228771ce637, type: 3}
+      propertyPath: initMoveSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 178229757, guid: 761d600d1e80341ac97f3228771ce637, type: 3}
+      propertyPath: followers.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100445237}
+    - target: {fileID: 178229757, guid: 761d600d1e80341ac97f3228771ce637, type: 3}
+      propertyPath: followers.Array.data[1]
+      value: 
+      objectReference: {fileID: 894418277}
+    - target: {fileID: 178229757, guid: 761d600d1e80341ac97f3228771ce637, type: 3}
+      propertyPath: followers.Array.data[2]
+      value: 
+      objectReference: {fileID: 1807604623}
+    - target: {fileID: 1220707086, guid: 761d600d1e80341ac97f3228771ce637, type: 3}
+      propertyPath: m_Constraints
+      value: 126
       objectReference: {fileID: 0}
     - target: {fileID: 1576909240372392, guid: 761d600d1e80341ac97f3228771ce637, type: 3}
       propertyPath: m_Name
@@ -1997,30 +2015,25 @@ PrefabInstance:
       propertyPath: pathCreator
       value: 
       objectReference: {fileID: 135027742}
+    - target: {fileID: 114548013775708692, guid: 761d600d1e80341ac97f3228771ce637,
+        type: 3}
+      propertyPath: playerEntity
+      value: 
+      objectReference: {fileID: 1220707089}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 761d600d1e80341ac97f3228771ce637, type: 3}
---- !u!1 &1220707085 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1179929860508712, guid: 761d600d1e80341ac97f3228771ce637,
+--- !u!114 &1220707089 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 178229757, guid: 761d600d1e80341ac97f3228771ce637,
     type: 3}
   m_PrefabInstance: {fileID: 1220707083}
   m_PrefabAsset: {fileID: 0}
---- !u!54 &1220707086
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1220707085}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 488f8f462f2baa449b86d5efcf675293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1233289183
 PrefabInstance:
   m_ObjectHideFlags: 0
