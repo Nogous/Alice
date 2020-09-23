@@ -306,6 +306,54 @@ Transform:
   m_Father: {fileID: 2079362724}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &37983624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 37983625}
+  - component: {fileID: 37983626}
+  m_Layer: 0
+  m_Name: MiniGameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &37983625
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37983624}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1559102755}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &37983626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37983624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3656b510df7e4f41a8874f7abb6b60e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  _minBetweenCollectible: 2
+  _maxBetweenCollectible: 6
+  _numberCollectibleTotal: 10
+  _numberCollectibleToPass: 3
 --- !u!1 &178229754 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1179929860508712, guid: 761d600d1e80341ac97f3228771ce637,
@@ -327,8 +375,11 @@ MonoBehaviour:
   initMoveSpeed: 5
   moveSpeedMax: 10
   moveSpeedMin: 1
+  currentSpeed: 5
+  looseSpeed: 0.5
   life: 5
   invicibilityFrameDuration: 0.1
+  takeDamage: 1
 --- !u!1 &290619051
 GameObject:
   m_ObjectHideFlags: 0
@@ -1641,6 +1692,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8611521568487885399, guid: 56a81401b5432b249a388c40e7d4fe06,
+        type: 3}
+      propertyPath: onDebugMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56a81401b5432b249a388c40e7d4fe06, type: 3}
 --- !u!4 &1215206533 stripped
@@ -1903,6 +1959,7 @@ Transform:
   - {fileID: 1446978015}
   - {fileID: 374678524}
   - {fileID: 1867276422}
+  - {fileID: 37983625}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
