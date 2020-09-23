@@ -51,3 +51,6 @@ MonoBehaviour:
   - tag: TeaCups
     prefab: {fileID: 72714545947667257, guid: 5321bda703b121b44b66490566fd85e7, type: 3}
     size: 25
+  - tag: Collectible
+    prefab: {fileID: 278647925050538077, guid: 359ee933131da9844a4fe5be7d675ed6, type: 3}
+    size: 10
