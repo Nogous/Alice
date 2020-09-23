@@ -40,6 +40,9 @@ public class DialogueReader : MonoBehaviour
             dialogueDictionnary.Add(dial.key, dial);
         }
 
+        if(ValueHolder.instance)
+            _language = ValueHolder.instance.gameLanguage;
+
     }
 
     // Update is called once per frame

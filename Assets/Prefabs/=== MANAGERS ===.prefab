@@ -43,7 +43,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05a45c40e0fa664985fd2a5d7b3f000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundEffects: []
+  soundEffects:
+  - clipName: Music
+    clip:
+    - {fileID: 8300000, guid: 6d46a358a46636a40a4cf8439c4b51ed, type: 3}
+    - {fileID: 8300000, guid: d8c3e92ebd4b30d4aadf3a7381aa3c1e, type: 3}
+    - {fileID: 8300000, guid: c70cd2a8756359749be749d4ab6561ca, type: 3}
+    - {fileID: 8300000, guid: 2cda3d8e5673d4844833ae1a704fb544, type: 3}
+    - {fileID: 8300000, guid: 6bba234e0020d124a8a628b7f8f315d3, type: 3}
+    - {fileID: 8300000, guid: 9a06deaabc0c0334dbd2c3d0d70bb94a, type: 3}
+    volume: 1
+    priority: 250
+    loop: 1
+    source: {fileID: 0}
 --- !u!1 &3307554570349706083
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,7 +275,7 @@ PrefabInstance:
     - target: {fileID: 8611521568487885399, guid: 56a81401b5432b249a388c40e7d4fe06,
         type: 3}
       propertyPath: onDebugMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56a81401b5432b249a388c40e7d4fe06, type: 3}
