@@ -85,7 +85,7 @@ public class PlayerEntity : MonoBehaviour
     private void TakeDamage(int dammage)
     {
         life -= dammage;
-        Debug.LogError(life);
+        //Debug.LogError(life);
         if (life<= 0)
         {
             GameManager.instance.PlayerDead();
