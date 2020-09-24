@@ -38,6 +38,12 @@ public class GameManager : MonoBehaviour
                     DialogueReader.instance.CheckDialogue("SMG", 1);
                     break;
                 case 5:
+                    MiniGameManager.instance.ChangeState(State.SECONDMG);
+                    break;
+                case 6:
+                    DialogueReader.instance.CheckDialogue("TMG", 1);
+                    break;
+                case 7:
                     MiniGameManager.instance.ChangeState(State.THIRDMG);
                     break;
             }

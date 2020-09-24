@@ -31,6 +31,8 @@ public class InterfaceManager : MonoBehaviour
             if (MiniGameManager.instance.state == State.DEAD)
             {
                 Time.timeScale = 0;
+                TimerScore.instance.StopTimer();
+                Life.instance.SetLifeUI(false);
                 gameOverPanel.SetActive(true);
                 gamePanel.SetActive(false);
                 pausePanel.SetActive(false);

@@ -23,6 +23,7 @@ public class ThirdMiniGame : MonoBehaviour
     private int _firstTriggerId = 0;
     private bool triggersGoUp = true;
     private bool shouldLoop = true;
+    private ThirdMiniGameTrigger[] triggers;
 
     private void Awake()
     {
@@ -48,6 +49,9 @@ public class ThirdMiniGame : MonoBehaviour
                 shapeHolder = Instantiate(shapeHolderPrefab).transform;
                 shapeHolder.GetComponent<PathCreation.Examples.PathFollower>().pathCreator = MasterPath.instance.mainPath;
                 shapeHolder.GetComponent<PathCreation.Examples.PathFollower>().distanceTravelled = MasterPath.instance.playerPathFollower.distanceTravelled + MasterPath.instance.playerPathFollower.pathOffset;
+
+                // reference pathfollower in player
+                PlayerEntity.instance.followers.Add(shapeHolder.GetComponent<PathCreation.Examples.PathFollower>());
                 InstantiateShape();
             }
         };
@@ -66,6 +70,7 @@ public class ThirdMiniGame : MonoBehaviour
     {
         currentShape = Instantiate(shapes[Random.Range(0, shapes.Length)], shapeHolder).transform;
         shouldLoop = currentShape.GetComponent<ShapeInfo>().loop;
+        triggers = currentShape.GetComponent<ShapeInfo>().triggers;
         _firstTriggerId = 0;
         _previousTriggerId = 0;
         _numberTriggerActivated = 0;
@@ -88,8 +93,7 @@ public class ThirdMiniGame : MonoBehaviour
                 if(!shouldLoop){
                     if ((triggerId == 0 && _previousTriggerId == _numberTriggerToActivate - 1))
                     {
-                        AudioManager.instance.Play("Wrong");
-                        _numberTriggerActivated = 0;
+                        RestShapeTrigger();
                         return;
                     }
                 }
@@ -102,8 +106,7 @@ public class ThirdMiniGame : MonoBehaviour
                 {
                     if((triggerId == _numberTriggerToActivate - 1 && _previousTriggerId == 0))
                     {
-                        AudioManager.instance.Play("Wrong");
-                        _numberTriggerActivated = 0;
+                        RestShapeTrigger();
                         return;
                     }
                 }
@@ -111,8 +114,7 @@ public class ThirdMiniGame : MonoBehaviour
             }
             else
             {
-                AudioManager.instance.Play("Wrong");
-                _numberTriggerActivated = 0;
+                RestShapeTrigger();
                 return;
             }
             _numberTriggerActivated += 1;
@@ -124,8 +126,7 @@ public class ThirdMiniGame : MonoBehaviour
             {
                 if (!(triggerId == _previousTriggerId + 1) && !(triggerId == 0 && _previousTriggerId == _numberTriggerToActivate - 1))
                 {
-                    AudioManager.instance.Play("Wrong");
-                    _numberTriggerActivated = 0;
+                    RestShapeTrigger();
                     return;
                 }
             }
@@ -133,14 +134,24 @@ public class ThirdMiniGame : MonoBehaviour
             {
                 if (!(triggerId == _previousTriggerId - 1) && !(triggerId == _numberTriggerToActivate - 1 && _previousTriggerId == 0))
                 {
-                    AudioManager.instance.Play("Wrong");
-                    _numberTriggerActivated = 0;
+                    RestShapeTrigger();
                     return;
                 }
             }
             _numberTriggerActivated += 1;
             _previousTriggerId = triggerId;
             CheckIfGameOver(triggerId);
+        }
+    }
+
+    private void RestShapeTrigger()
+    {
+        AudioManager.instance.Play("Wrong");
+        _numberTriggerActivated = 0;
+
+        for (int i= triggers.Length;i-->0;)
+        {
+            triggers[i].ResetParticules();
         }
     }
 
@@ -152,8 +163,7 @@ public class ThirdMiniGame : MonoBehaviour
             {
                 if (lastId != _firstTriggerId)
                 {
-                    AudioManager.instance.Play("Wrong");
-                    _numberTriggerActivated = 0;
+                    RestShapeTrigger();
                     return;
                 }
                 AudioManager.instance.Play("Correct");

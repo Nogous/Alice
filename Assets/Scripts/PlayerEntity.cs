@@ -16,6 +16,7 @@ public class PlayerEntity : MonoBehaviour
     public float moveSpeedMax = 10f;
     public float moveSpeedMin = 1f;
     public float acceleration = .5f;
+    public float deceleration = 1f;
     [SerializeField] private float currentSpeed = 5f;
     public float looseSpeed = .5f;
     private bool canSpeedUp = false;
@@ -106,7 +107,22 @@ public class PlayerEntity : MonoBehaviour
                 if (!_musicPallierReached[previousPallier] && currentSpeed > _musicPallier[previousPallier])
                 {
                     _musicPallierReached[previousPallier] = true;
-                    previousPallier += 1;
+                    if(previousPallier + 1 < _musicPallier.Length)
+                        previousPallier += 1;
+                }
+            }
+        }
+
+        if (currentSpeed > moveSpeedMin && !canSpeedUp)
+        {
+            currentSpeed -= deceleration * Time.fixedDeltaTime;
+            if (previousPallier >= 0)
+            {
+                if (_musicPallierReached[previousPallier] && currentSpeed > _musicPallier[previousPallier])
+                {
+                    _musicPallierReached[previousPallier] = false;
+                    if(previousPallier - 1 >= 0)
+                        previousPallier -= 1;
                 }
             }
         }
@@ -165,6 +181,8 @@ public class PlayerEntity : MonoBehaviour
 
             Destroy(collision.gameObject);
             AudioManager.instance.Play("BodyImpact");
+
+            Life.instance.LooseLife();
         }
         PortalPathToPath tmpPath = collision.gameObject.GetComponent<PortalPathToPath>();
         if (tmpPath != null)
