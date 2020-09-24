@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minTimeBetweenObstacles: 1
-  maxTimeBetweenObstacles: 2
+  maxTimeBetweenObstacles: 4
   obstacleTags:
   - Armchair
   - Bed

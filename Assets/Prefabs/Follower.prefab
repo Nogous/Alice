@@ -193,18 +193,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 488f8f462f2baa449b86d5efcf675293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initMoveSpeed: 5
+  initMoveSpeed: 2
   moveSpeedMax: 10
   moveSpeedMin: 1
-  acceleration: 0.5
-  currentSpeed: 5
+  acceleration: 0.2
+  currentSpeed: 2
   looseSpeed: 0.5
+  inertieOff: 1
   speedPlan: 7.8
-  inertyForce: 0.52
+  inertieForce: 1
   life: 5
   invicibilityFrameDuration: 0.1
   takeDamage: 1
-  followers: []
+  followers:
+  - {fileID: 114548013775708692}
+  - {fileID: 0}
+  - {fileID: 0}
   cam: {fileID: 529321321}
   offsetRotationAlice: {x: 180, y: -90, z: 90}
   colisionRange: 5
@@ -378,7 +382,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathCreator: {fileID: 0}
   endOfPathInstruction: 0
-  speed: 0
+  speed: 5
   distanceTravelled: 0
   pathOffset: 0
 --- !u!1 &5503300400465645934
