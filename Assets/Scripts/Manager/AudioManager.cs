@@ -114,10 +114,10 @@ public class AudioManager : MonoBehaviour
     {
         canPlayMusic = false;
         AudioSource fxSource = Array.Find(soundEffects, sound => sound.clipName == sourceToLower).source;
-        if (fxSource.volume - 0.4f >= 0)
-            fxSource.volume -= 0.4f;
-        yield return new WaitForSeconds(0.2f);
-        if(fxSource.volume <= 0.4f)
+        if (fxSource.volume - 0.2f >= 0)
+            fxSource.volume -= 0.2f;
+        yield return new WaitForSeconds(0.3f);
+        if(fxSource.volume <= 0.2f)
         {
             fxSource.volume = 0;
             StopCoroutine(FadeOutBeforeNewMusic(sourceToLower, music, index));
@@ -134,10 +134,10 @@ public class AudioManager : MonoBehaviour
     private IEnumerator FadeInNewMusic(string sourceToUp)
     {
         AudioSource fxSource = Array.Find(soundEffects, sound => sound.clipName == sourceToUp).source;
-        yield return new WaitForSeconds(0.2f);
-        if (fxSource.volume + 0.4f <= 1)
+        yield return new WaitForSeconds(0.3f);
+        if (fxSource.volume + 0.2f <= 1)
         {
-            fxSource.volume += 0.4f;
+            fxSource.volume += 0.2f;
             StartCoroutine(FadeInNewMusic(sourceToUp));
         }
         else

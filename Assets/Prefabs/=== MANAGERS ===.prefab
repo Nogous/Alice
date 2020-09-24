@@ -203,6 +203,7 @@ GameObject:
   - component: {fileID: 3307554572000228245}
   - component: {fileID: 3307554572000228246}
   - component: {fileID: 2781175532223923807}
+  - component: {fileID: 4370278639178328739}
   - component: {fileID: 6491477589158909778}
   m_Layer: 0
   m_Name: MiniGameManager
@@ -259,6 +260,21 @@ MonoBehaviour:
   collectibleTags:
   - Cake
   - Cookie
+  _collectibleOffsetX: 1
+  _collectibleOffsetY: 1
+--- !u!114 &4370278639178328739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3307554572000228244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 691d082a1c27b0742b68cfbdf9f63a2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _infoPanel: {fileID: 0}
 --- !u!114 &6491477589158909778
 MonoBehaviour:
   m_ObjectHideFlags: 0
