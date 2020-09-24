@@ -70,7 +70,7 @@ public class DialogueReader : MonoBehaviour
             CheckDialogue(_dialogueContext, _dialogueIndex);
         }
 
-        if(!GameManager.instance.onDebugMode && Input.GetKeyDown(KeyCode.Space))
+        if(!GameManager.instance.onDebugMode && Input.GetKeyDown(KeyCode.Space) && MiniGameManager.instance.state == State.NONE)
         {
             CheckDialogue(_dialogueContext, _dialogueIndex);
         }

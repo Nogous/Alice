@@ -9,7 +9,9 @@ public class MiniGameManager : MonoBehaviour
     public static MiniGameManager instance;
 
     public State state;
+    public State previousState;
     public System.Action onChangeState;
+
 
     [Header("Mini-game 1")]
     public int collectiblesPickedUp = 0;
@@ -27,6 +29,7 @@ public class MiniGameManager : MonoBehaviour
 
     public void ChangeState(State newState)
     {
+        previousState = state;
         state = newState;
         if (onChangeState != null) onChangeState.Invoke();
     }

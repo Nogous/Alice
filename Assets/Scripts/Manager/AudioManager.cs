@@ -35,13 +35,15 @@ public class AudioManager : MonoBehaviour
         if (MiniGameManager.instance != null)
         MiniGameManager.instance.onChangeState += () =>
         {
-            if(MiniGameManager.instance.state == State.NONE)
+            if((MiniGameManager.instance.state == State.NONE || MiniGameManager.instance.state == State.TUTO))
             {
-                StartCoroutine(FadeOutBeforeNewMusic("Music", "Music", 0));
+                if((MiniGameManager.instance.previousState != State.NONE && MiniGameManager.instance.previousState != State.TUTO))
+                    StartCoroutine(FadeOutBeforeNewMusic("Music", "Music", 0));
             }
             else
             {
-                StartCoroutine(FadeOutBeforeNewMusic("Music", "Music", 1));
+                if (MiniGameManager.instance.previousState == State.NONE || MiniGameManager.instance.previousState == State.TUTO)
+                    StartCoroutine(FadeOutBeforeNewMusic("Music", "Music", 1));
             }
         };
         Play("Music", 0, false);
