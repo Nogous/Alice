@@ -53,7 +53,7 @@ public class HatMinigame : MonoBehaviour
             }
 
             timerSpawn = Random.Range(_minBetweenHat, _maxBetweenHat);
-            ObjectSpawner.instance.InstantiateObject("Hat");
+            ObjectSpawner.instance.InstantiateObject("Hat", ObjectSpawner.instance.xBigOffset, ObjectSpawner.instance.yBigOffset);
             _currentCollectibleInstantiated += 1;
         }
     }

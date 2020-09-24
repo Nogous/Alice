@@ -1280,6 +1280,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 178229757, guid: 761d600d1e80341ac97f3228771ce637, type: 3}
+      propertyPath: inertieOff
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 529321321, guid: 761d600d1e80341ac97f3228771ce637, type: 3}
       propertyPath: m_ClearFlags
       value: 2
@@ -2837,21 +2841,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2522565991445876573, guid: e82ac93fb9c83dc4a8a3e0342605bd36,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2522565991445876573, guid: e82ac93fb9c83dc4a8a3e0342605bd36,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2522565991445876573, guid: e82ac93fb9c83dc4a8a3e0342605bd36,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 3248145267091606443, guid: e82ac93fb9c83dc4a8a3e0342605bd36,
         type: 3}
       propertyPath: mainPath
