@@ -18,6 +18,8 @@ public class ObjectSpawner : MonoBehaviour
     [SerializeField] private Transform obstacleSpawnPoint;
     [SerializeField] PathCreation.PathCreator mainPath;
 
+    private bool shouldSpawnObjects = false;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -32,6 +34,7 @@ public class ObjectSpawner : MonoBehaviour
     void Start()
     {
         objectPooler = ObjectPooler.instance;
+
 
         MiniGameManager.instance.onChangeState += () =>
         {
@@ -56,29 +59,42 @@ public class ObjectSpawner : MonoBehaviour
     IEnumerator WaitAndEndTuto()
     {
         yield return new WaitForSeconds(15);
-        StopAllCoroutines();
+        shouldSpawnObjects = false;
+        yield return new WaitForSeconds(3);
+        foreach (Transform child in objectPooler.transform)
+        {
+            child.gameObject.SetActive(false);
+        }
         MiniGameManager.instance.ChangeState(State.NONE);
         if (GameManager.instance.onPhaseChange != null) GameManager.instance.onPhaseChange.Invoke(2);
     }
 
     private IEnumerator WaitAndSpawnObjects()
     {
-            yield return new WaitForSeconds(0.5f);
-            StartCoroutine(SpawnObjects());
+        yield return new WaitForSeconds(0.5f);
+        shouldSpawnObjects = true;
+        StartCoroutine(SpawnObjects());
     }
 
     private IEnumerator SpawnObjects()
     {
-        InstantiateObject();
-        yield return new WaitForSeconds(0.5f);
-        InstantiateObject();
-        yield return new WaitForSeconds(Random.Range(minTimeBetweenObstacles, maxTimeBetweenObstacles));
-        StartCoroutine(SpawnObjects());
+        InstantiateObject(obstacleTags);
+        float globalTime = 0;
+        float time = Random.Range(0.2f, 0.5f);
+        yield return new WaitForSeconds(time);
+        InstantiateObject(obstacleTags);
+        float secondTime = Random.Range(0.2f, 0.5f);
+        globalTime = time + secondTime;
+        yield return new WaitForSeconds(secondTime);
+        InstantiateObject(obstacleTags);
+        yield return new WaitForSeconds(Random.Range(minTimeBetweenObstacles, maxTimeBetweenObstacles) - globalTime);
+        if(shouldSpawnObjects)
+            StartCoroutine(SpawnObjects());
     }
 
-    private void InstantiateObject()
+    public void InstantiateObject(string [] objectTags)
     {
-        GameObject obj = objectPooler.SpawnFromPool(obstacleTags[Random.Range(0, obstacleTags.Length)],
+        GameObject obj = objectPooler.SpawnFromPool(objectTags[Random.Range(0, objectTags.Length)],
             obstacleSpawnPoint.position,
             Vector3.zero);
         Vector3 newOffset = new Vector3(Random.Range(-xOffset, xOffset), Random.Range(-yOffset, yOffset));

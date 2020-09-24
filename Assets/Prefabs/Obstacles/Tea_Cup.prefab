@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathCreator: {fileID: 0}
   endOfPathInstruction: 0
-  speed: -8
+  speed: -2
   distanceTravelled: 0
   pathOffset: 0
 --- !u!114 &1990061406009844268
@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a189b35900d9ec4bb64da037644dc1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  child: {fileID: 0}
+  child: {fileID: 8443391145558447180}
 --- !u!1 &8443391145558447171
 GameObject:
   m_ObjectHideFlags: 0

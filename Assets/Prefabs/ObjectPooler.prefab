@@ -47,101 +47,98 @@ MonoBehaviour:
   - tag: Armchair
     prefab: {fileID: 6824783621832106074, guid: 4d4d5abc6569fe647bc46928d500197e,
       type: 3}
-    size: 1
+    size: 5
   - tag: Bed
     prefab: {fileID: 165424612912580738, guid: 1dd4b0e944fc16b4c9487fea26e21d70, type: 3}
-    size: 1
-  - tag: Collectible
-    prefab: {fileID: 278647925050538077, guid: 359ee933131da9844a4fe5be7d675ed6, type: 3}
-    size: 10
+    size: 5
   - tag: BookClosed
     prefab: {fileID: 8069682875351497974, guid: ce5b9464dd4497a4d8c3e72568d09bad,
       type: 3}
-    size: 1
+    size: 5
   - tag: BookOpen
     prefab: {fileID: 2305887896508643728, guid: d384aa6c836afa942ad5231a45347e30,
       type: 3}
-    size: 1
+    size: 5
   - tag: Cake
     prefab: {fileID: 1890336811664732084, guid: 98d6a98bd7e5d134e86e425493d64a05,
       type: 3}
-    size: 1
+    size: 5
   - tag: Candlestick
     prefab: {fileID: 8463570404745089652, guid: 41765568f19bc7a4cb93c31e9f56c8de,
       type: 3}
-    size: 1
+    size: 5
   - tag: CardGroup
     prefab: {fileID: 1157560759707309124, guid: 0b7c7b60a6948824f9c788346efe1de3,
       type: 3}
-    size: 1
+    size: 5
   - tag: CardSingle
     prefab: {fileID: 3144746818306813080, guid: 0ebd0cd7799480644b263bd61d178058,
       type: 3}
-    size: 1
+    size: 5
   - tag: Chair
     prefab: {fileID: 6918398658682513104, guid: db806653b85284140b4a6a27fd075bcf,
       type: 3}
-    size: 1
+    size: 5
   - tag: Clock
     prefab: {fileID: 5280358779280812839, guid: df6b9219fd94e034d94629bddb2eac1a,
       type: 3}
-    size: 1
+    size: 5
   - tag: Cookie
     prefab: {fileID: 4557901189373658956, guid: 2177ae329ad86a546b531926223f323e,
       type: 3}
-    size: 1
+    size: 5
   - tag: FlowerVase
     prefab: {fileID: 8832260200470093687, guid: ee343a6998d78514ca410359bd2bf1a0,
       type: 3}
-    size: 1
+    size: 5
   - tag: Globe
     prefab: {fileID: 8671043325180351814, guid: b25b16cbdadc0a34f804fd58a4cf0921,
       type: 3}
-    size: 1
+    size: 5
   - tag: Hat
     prefab: {fileID: 7613618356628109690, guid: e2d48e8ba73a0a34299f3453d1853251,
       type: 3}
-    size: 1
+    size: 5
   - tag: HorsePieceA
     prefab: {fileID: 8261437948836866085, guid: 2f68a50fbf593ae4fb3144de25906cce,
       type: 3}
-    size: 1
+    size: 5
   - tag: HorsePieceB
     prefab: {fileID: 6663702239189963733, guid: dfd9bf4a79c4fbb438a5075a1b1da89c,
       type: 3}
-    size: 1
+    size: 5
   - tag: Lamp
     prefab: {fileID: 4211029375696134603, guid: c022ecb593043784c90bf429fdf8d432,
       type: 3}
-    size: 1
+    size: 5
   - tag: Painting
     prefab: {fileID: 8029254105901779478, guid: ae117b5be29e9e0458e378c44082cd8e,
       type: 3}
-    size: 1
+    size: 5
   - tag: PedestalTable
     prefab: {fileID: 3472252002406855606, guid: d11e21d30f47fd74198c84bcf70e2e79,
       type: 3}
-    size: 1
+    size: 5
   - tag: Pendulum
     prefab: {fileID: 6380851697201373673, guid: e486976ab8752a743992e3d8c71ad818,
       type: 3}
-    size: 1
+    size: 5
   - tag: PepperMill
     prefab: {fileID: 3250283079793017731, guid: 4613266637710d6479d356c1c9069624,
       type: 3}
-    size: 1
+    size: 5
   - tag: PocketWatch
     prefab: {fileID: 4324918722761086111, guid: f96e7f1b916f9494bac552fe80e9c5d8,
       type: 3}
-    size: 1
+    size: 5
   - tag: TeaColumn
     prefab: {fileID: 7275385184767894717, guid: ec8fca95cabba8542b098a1a5f074ba7,
       type: 3}
-    size: 1
+    size: 5
   - tag: TeaCup
     prefab: {fileID: 5028141476918940932, guid: b87ef6d824aae83428d99dea2c5808a9,
       type: 3}
-    size: 1
+    size: 5
   - tag: TeaPot
     prefab: {fileID: 106305623058242070, guid: 4ce9ae7bd3f17f545b883635c41de3fe, type: 3}
-    size: 1
+    size: 5
