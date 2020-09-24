@@ -1281,9 +1281,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 178229757, guid: 761d600d1e80341ac97f3228771ce637, type: 3}
-      propertyPath: inertieOff
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: followers.Array.data[1]
+      value: 
+      objectReference: {fileID: 1767554436}
+    - target: {fileID: 178229757, guid: 761d600d1e80341ac97f3228771ce637, type: 3}
+      propertyPath: followers.Array.data[2]
+      value: 
+      objectReference: {fileID: 650467337}
     - target: {fileID: 529321321, guid: 761d600d1e80341ac97f3228771ce637, type: 3}
       propertyPath: m_ClearFlags
       value: 2
@@ -1357,11 +1361,6 @@ PrefabInstance:
       propertyPath: pathCreator
       value: 
       objectReference: {fileID: 1125758002}
-    - target: {fileID: 114548013775708692, guid: 761d600d1e80341ac97f3228771ce637,
-        type: 3}
-      propertyPath: speed
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 761d600d1e80341ac97f3228771ce637, type: 3}
 --- !u!1 &892331491
@@ -2861,6 +2860,11 @@ PrefabInstance:
       propertyPath: obstacleDestroyer
       value: 
       objectReference: {fileID: 650467337}
+    - target: {fileID: 3248145267091606443, guid: e82ac93fb9c83dc4a8a3e0342605bd36,
+        type: 3}
+      propertyPath: playerPathFollower
+      value: 
+      objectReference: {fileID: 1459605750}
     - target: {fileID: 3307554570349706142, guid: e82ac93fb9c83dc4a8a3e0342605bd36,
         type: 3}
       propertyPath: _dialoguePanel

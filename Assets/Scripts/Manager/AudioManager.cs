@@ -12,6 +12,9 @@ public class AudioManager : MonoBehaviour
 
     private IEnumerator coroutineToStop;
 
+    public bool FadeInOver = false;
+    public bool canPlayMusic = false;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -35,15 +38,15 @@ public class AudioManager : MonoBehaviour
         if (MiniGameManager.instance != null)
         MiniGameManager.instance.onChangeState += () =>
         {
-            if((MiniGameManager.instance.state == State.NONE || MiniGameManager.instance.state == State.TUTO))
+            if ((MiniGameManager.instance.state == State.NONE || MiniGameManager.instance.state == State.TUTO))
             {
-                if((MiniGameManager.instance.previousState != State.NONE && MiniGameManager.instance.previousState != State.TUTO))
+                if ((MiniGameManager.instance.previousState != State.NONE && MiniGameManager.instance.previousState != State.TUTO))
                     StartCoroutine(FadeOutBeforeNewMusic("Music", "Music", 0));
             }
             else
             {
                 if (MiniGameManager.instance.previousState == State.NONE || MiniGameManager.instance.previousState == State.TUTO)
-                    StartCoroutine(FadeOutBeforeNewMusic("Music", "Music", 1));
+                    StartCoroutine(FadeOutBeforeNewMusic("Music", "Music", PlayerEntity.instance.previousPallier));
             }
         };
         Play("Music", 0, false);
@@ -78,6 +81,19 @@ public class AudioManager : MonoBehaviour
         fx.source.Play();
     }
 
+    public bool CheckAudioClip(int index)
+    {
+        SoundEffect fx = Array.Find(soundEffects, sound => sound.clipName == "Music");
+        if(fx.source.clip == fx.clip[index])
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
 
     public void Stop(string name)
     {
@@ -92,11 +108,12 @@ public class AudioManager : MonoBehaviour
 
     public IEnumerator FadeOutBeforeNewMusic(string sourceToLower, string music, int index)
     {
+        canPlayMusic = false;
         AudioSource fxSource = Array.Find(soundEffects, sound => sound.clipName == sourceToLower).source;
-        if (fxSource.volume - 0.2f >= 0)
-            fxSource.volume -= 0.2f;
-        yield return new WaitForSeconds(0.3f);
-        if(fxSource.volume <= 0.2f)
+        if (fxSource.volume - 0.4f >= 0)
+            fxSource.volume -= 0.4f;
+        yield return new WaitForSeconds(0.2f);
+        if(fxSource.volume <= 0.4f)
         {
             fxSource.volume = 0;
             StopCoroutine(FadeOutBeforeNewMusic(sourceToLower, music, index));
@@ -113,15 +130,16 @@ public class AudioManager : MonoBehaviour
     private IEnumerator FadeInNewMusic(string sourceToUp)
     {
         AudioSource fxSource = Array.Find(soundEffects, sound => sound.clipName == sourceToUp).source;
-        yield return new WaitForSeconds(0.3f);
-        if (fxSource.volume + 0.2f <= 1)
+        yield return new WaitForSeconds(0.2f);
+        if (fxSource.volume + 0.4f <= 1)
         {
-            fxSource.volume += 0.2f;
+            fxSource.volume += 0.4f;
             StartCoroutine(FadeInNewMusic(sourceToUp));
         }
         else
         {
             fxSource.volume = 1;
+            canPlayMusic = true;
             StopCoroutine(FadeInNewMusic(sourceToUp));
         }
     }
