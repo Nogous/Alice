@@ -14,6 +14,7 @@ public class HatMinigame : MonoBehaviour
     public int collectiblesPickedUp = 0;
 
     private float timerSpawn;
+    public BigHat bigHat;
 
     private void Awake()
     {
@@ -55,6 +56,17 @@ public class HatMinigame : MonoBehaviour
             ObjectSpawner.instance.InstantiateObject("Hat");
             _currentCollectibleInstantiated += 1;
         }
+    }
+
+    public void StartMiniGame()
+    {
+        bigHat.gameObject.SetActive(true);
+        bigHat.StartMiniGame();
+    }
+
+    public void EndMiniGame()
+    {
+        bigHat.EndMiniGame();
     }
     private void CheckIfMiniGamePassed()
     {

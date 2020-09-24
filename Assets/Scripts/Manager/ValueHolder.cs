@@ -25,6 +25,7 @@ public class ValueHolder : MonoBehaviour
 
     public void ChangeGameLanguage(int newOption)
     {
+        print("change");
         gameLanguageId = newOption;
         gameLanguage = languageDropdown.options[gameLanguageId].text;
     }

@@ -101,4 +101,9 @@ public class ObjectSpawner : MonoBehaviour
         PathCreation.Examples.PathFollower spawnParentFollower = obstacleSpawnPoint.parent.GetComponent<PathCreation.Examples.PathFollower>();
         obj.GetComponent<PathCreation.Examples.PathFollower>().distanceTravelled = spawnParentFollower.distanceTravelled + spawnParentFollower.pathOffset;
     }
+
+    public PathCreation.PathCreator GetPath()
+    {
+        return mainPath;
+    }
 }
