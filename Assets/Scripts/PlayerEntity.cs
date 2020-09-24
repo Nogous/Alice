@@ -19,6 +19,7 @@ public class PlayerEntity : MonoBehaviour
     [SerializeField] private float currentSpeed = 5f;
     public float looseSpeed = .5f;
 
+    public float speedPlan = 1f;
     public float inertyForce = 1;
     private Vector3 inertie = Vector3.zero;
 
@@ -90,7 +91,7 @@ public class PlayerEntity : MonoBehaviour
         
 
         //mouvement fix
-        transform.localPosition += inertie * Time.deltaTime * initMoveSpeed;
+        transform.localPosition += inertie * Time.deltaTime * speedPlan;
 
         Vector3 tmp = transform.localPosition.normalized * colisionRange;
         if (transform.localPosition.magnitude >= (tmp.magnitude))
