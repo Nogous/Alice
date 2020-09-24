@@ -19,8 +19,11 @@ public class PlayerEntity : MonoBehaviour
     [SerializeField] private float currentSpeed = 5f;
     public float looseSpeed = .5f;
 
+    [Header("inertie")]
+    public bool inertieOff = false;
+
     public float speedPlan = 1f;
-    public float inertyForce = 1;
+    public float inertieForce = 1;
     private Vector3 inertie = Vector3.zero;
 
     [Header("life")]
@@ -79,19 +82,25 @@ public class PlayerEntity : MonoBehaviour
         }
 
         //if (movement == Vector3.zero) return;
-
-        Debug.DrawRay(transform.position, inertie, Color.blue);
-        inertie -= inertie.normalized*Time.deltaTime / inertyForce;
-        Debug.DrawRay(transform.position, -inertie, Color.red);
-        inertie += movement/(10*Time.deltaTime);
-        if(inertie.magnitude > inertie.normalized.magnitude)
+        if (!inertieOff)
         {
-            inertie = inertie.normalized;
-        }
-        
+            Debug.DrawRay(transform.position, inertie, Color.blue);
+            inertie -= inertie.normalized * Time.deltaTime / inertieForce;
+            Debug.DrawRay(transform.position, -inertie, Color.red);
+            inertie += movement / (10 * Time.deltaTime);
+            if (inertie.magnitude > inertie.normalized.magnitude)
+            {
+                inertie = inertie.normalized;
+            }
 
-        //mouvement fix
-        transform.localPosition += inertie * Time.deltaTime * speedPlan;
+
+            //mouvement fix
+            transform.localPosition += inertie * Time.deltaTime * speedPlan;
+        }
+        else
+        {
+            transform.localPosition += movement * Time.deltaTime * speedPlan;
+        }
 
         Vector3 tmp = transform.localPosition.normalized * colisionRange;
         if (transform.localPosition.magnitude >= (tmp.magnitude))
