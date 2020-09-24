@@ -20,6 +20,7 @@ public class CollectibleBehaviour : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            AudioManager.instance.Play("Correct");
             MiniGameManager.instance.collectiblesPickedUp += 1;
             transform.parent.gameObject.SetActive(false);
         }
