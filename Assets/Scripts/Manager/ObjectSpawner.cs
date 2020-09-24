@@ -15,6 +15,8 @@ public class ObjectSpawner : MonoBehaviour
     public float yOffset = 0.5f;
     public float xBigOffset = 3;
     public float yBigOffset = 3;
+    [SerializeField] private int _numberOfObjectsOnBigArea = 3;
+    [SerializeField] private int _numberOfObjectsOnLittleArea = 2;
 
     [Header("References")]
     [SerializeField] private Transform obstacleSpawnPoint;
@@ -80,24 +82,39 @@ public class ObjectSpawner : MonoBehaviour
 
     private IEnumerator SpawnObjects()
     {
-        InstantiateObject(obstacleTags, xBigOffset, yBigOffset);
-        InstantiateObject(obstacleTags, xBigOffset, yBigOffset);
-        InstantiateObject(obstacleTags, xBigOffset, yBigOffset);
+        for (int i = 0; i <= _numberOfObjectsOnBigArea; i++)
+        {
+            InstantiateObject(obstacleTags, xBigOffset, yBigOffset);
+        }
         //
-        InstantiateObject(obstacleTags, xOffset, yOffset);
-        InstantiateObject(obstacleTags, xOffset, yOffset);
+        for (int i = 0; i <= _numberOfObjectsOnLittleArea; i++)
+        {
+            InstantiateObject(obstacleTags, xOffset, yOffset);
+        }
         float globalTime = 0;
-        float time = Random.Range(0.2f, 0.5f);
+        float time = Random.Range(minTimeBetweenObstacles / 4, minTimeBetweenObstacles / 2);
         yield return new WaitForSeconds(time);
-        InstantiateObject(obstacleTags, xBigOffset, yBigOffset);
-        InstantiateObject(obstacleTags, xBigOffset, yBigOffset);
+        for (int i = 0; i <= _numberOfObjectsOnBigArea; i++)
+        {
+            InstantiateObject(obstacleTags, xBigOffset, yBigOffset);
+        }
         //
-        InstantiateObject(obstacleTags, xOffset, yOffset);
-        float secondTime = Random.Range(0.2f, 0.5f);
+        for (int i = 0; i <= _numberOfObjectsOnLittleArea; i++)
+        {
+            InstantiateObject(obstacleTags, xOffset, yOffset);
+        }
+        float secondTime = Random.Range(minTimeBetweenObstacles / 4, minTimeBetweenObstacles/2);
         globalTime = time + secondTime;
         yield return new WaitForSeconds(secondTime);
-        InstantiateObject(obstacleTags, xBigOffset, yBigOffset);
-        InstantiateObject(obstacleTags, xBigOffset, yBigOffset);
+        for (int i = 0; i <= _numberOfObjectsOnBigArea; i++)
+        {
+            InstantiateObject(obstacleTags, xBigOffset, yBigOffset);
+        }
+        //
+        for (int i = 0; i <= _numberOfObjectsOnLittleArea; i++)
+        {
+            InstantiateObject(obstacleTags, xOffset, yOffset);
+        }
         //
         InstantiateObject(obstacleTags, xOffset, yOffset);
         yield return new WaitForSeconds(Random.Range(minTimeBetweenObstacles, maxTimeBetweenObstacles) - globalTime);

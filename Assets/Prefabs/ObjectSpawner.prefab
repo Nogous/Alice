@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minTimeBetweenObstacles: 1
-  maxTimeBetweenObstacles: 3.5
+  maxTimeBetweenObstacles: 2
   obstacleTags:
   - Armchair
   - Bed
@@ -68,9 +68,11 @@ MonoBehaviour:
   - TeaColumn
   - TeaCup
   - TeaPot
-  xOffset: 0.5
-  yOffset: 3
+  xOffset: 1
+  yOffset: 1
   xBigOffset: 3
   yBigOffset: 3
+  _numberOfObjectsOnBigArea: 2
+  _numberOfObjectsOnLittleArea: 1
   obstacleSpawnPoint: {fileID: 0}
   mainPath: {fileID: 0}
