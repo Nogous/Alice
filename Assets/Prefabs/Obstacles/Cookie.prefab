@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1129160443603666436}
   - component: {fileID: 1129160443603666437}
+  - component: {fileID: 9208982925558787156}
   m_Layer: 0
   m_Name: Parents
   m_TagString: Collectible
@@ -45,6 +46,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.14179435, y: 0.022394717, z: 0.15240738}
   m_Center: {x: 0.0073049515, y: 0.017496258, z: -0.0002798289}
+--- !u!114 &9208982925558787156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129160443603666443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff7b7d084bae65d45ae43ba167b094a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4557901189373658956
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,7 +85,7 @@ Transform:
   m_GameObject: {fileID: 4557901189373658956}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 1129160443603666436}
   m_Father: {fileID: 0}

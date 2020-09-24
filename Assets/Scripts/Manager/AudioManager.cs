@@ -43,6 +43,10 @@ public class AudioManager : MonoBehaviour
                 if ((MiniGameManager.instance.previousState != State.NONE && MiniGameManager.instance.previousState != State.TUTO))
                     StartCoroutine(FadeOutBeforeNewMusic("Music", "Music", 0));
             }
+            else if(MiniGameManager.instance.state == State.DEAD)
+            {
+                Stop("Music");
+            }
             else
             {
                 if (MiniGameManager.instance.previousState == State.NONE || MiniGameManager.instance.previousState == State.TUTO)

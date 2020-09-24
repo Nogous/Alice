@@ -13,6 +13,8 @@ public class FirstMiniGame : MonoBehaviour
     [SerializeField] private int numberCollectibleTotal = 10;
     [SerializeField] private int numberCollectibleToPass = 3;
     [SerializeField] private string[] collectibleTags;
+    [SerializeField] private float _collectibleOffsetX;
+    [SerializeField] private float _collectibleOffsetY;
 
     // Start is called before the first frame update
     void Start()
@@ -47,7 +49,7 @@ public class FirstMiniGame : MonoBehaviour
 
     private IEnumerator FirstMinigame()
     {
-        ObjectSpawner.instance.InstantiateObject(collectibleTags, ObjectSpawner.instance.xBigOffset, ObjectSpawner.instance.yBigOffset);
+        ObjectSpawner.instance.InstantiateObject(collectibleTags, _collectibleOffsetX, _collectibleOffsetY);
         yield return new WaitForSeconds(Random.Range(minBetweenCollectible, maxBetweenCollectible));
         _currentCollectibleInstantiated += 1;
         if (_currentCollectibleInstantiated < numberCollectibleTotal)
@@ -62,17 +64,13 @@ public class FirstMiniGame : MonoBehaviour
     {
         if (miniGameManager.collectiblesPickedUp >= numberCollectibleToPass)
         {
-            //go to second minigame
-            print("you passed");
-            //miniGameManager.ChangeState(State.NONE);
+            MiniGameManager.instance.ChangeState(State.NONE);
+            if (GameManager.instance.onPhaseChange != null) GameManager.instance.onPhaseChange.Invoke(4);
         }
         else
         {
-            //gameover
-            print("you lost");
+            GameManager.instance.PlayerDead();
         }
-        MiniGameManager.instance.ChangeState(State.NONE);
-        if (GameManager.instance.onPhaseChange != null) GameManager.instance.onPhaseChange.Invoke(4);
     }
 
     private IEnumerator WaitAndEndFirstMiniGame()

@@ -43,7 +43,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.24
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8783875836449221846
 MonoBehaviour:
@@ -101,7 +101,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.24
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8538011583669441679
 MonoBehaviour:
@@ -159,7 +159,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.24
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6416226010558289330
 MonoBehaviour:
@@ -217,7 +217,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.24
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6101062488095927013
 MonoBehaviour:
@@ -275,7 +275,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.24
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &823105471116053806
 MonoBehaviour:
@@ -333,7 +333,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.24
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7343577551119729004
 MonoBehaviour:
@@ -391,7 +391,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.24
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4684054458133491851
 MonoBehaviour:
@@ -449,7 +449,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.24
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4913893368541304640
 MonoBehaviour:
@@ -507,7 +507,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.24
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6528375333572417305
 MonoBehaviour:
@@ -565,7 +565,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.24
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4817205911784619468
 MonoBehaviour:
@@ -623,7 +623,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.24
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8893157072802358320
 MonoBehaviour:
@@ -681,7 +681,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.24
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3061510397092467821
 MonoBehaviour:
@@ -739,7 +739,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.24
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6127363950021946951
 MonoBehaviour:
@@ -797,7 +797,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.24
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5449923299274540822
 MonoBehaviour:
@@ -855,7 +855,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.24
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3811657380182350041
 MonoBehaviour:
@@ -1038,7 +1038,7 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_UseWorldSpace: 0
-  m_Loop: 0
+  m_Loop: 1
 --- !u!1 &7834558519768111684
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,7 +1082,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.24
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6744307068026730771
 MonoBehaviour:
@@ -1204,7 +1204,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.24
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7360943734426093306
 MonoBehaviour:
@@ -1262,7 +1262,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.24
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1192770416721705737
 MonoBehaviour:
@@ -1320,7 +1320,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.24
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8383624725560108185
 MonoBehaviour:

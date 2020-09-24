@@ -111,7 +111,6 @@ public class DialogueReader : MonoBehaviour
             string[] phaseRow = dialogueDictionnary[dialogueKey].dialogue.Split(new char[] { '_' });
             int.TryParse(phaseRow[1], out newPhase);
             print(dialogueDictionnary[dialogueKey].dialogue);
-            print(newPhase);
             if (GameManager.instance.onPhaseChange != null) GameManager.instance.onPhaseChange.Invoke(newPhase);
             _dialoguePanel.SetActive(false);
             _characterTalkingPlace.gameObject.SetActive(false);

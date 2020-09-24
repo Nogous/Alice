@@ -1,63 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1200113338932991426
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1675434147301340180}
-  - component: {fileID: 5168772841495844787}
-  - component: {fileID: 247047679798309091}
-  m_Layer: 0
-  m_Name: 9
-  m_TagString: Untagged
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1675434147301340180
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1200113338932991426}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.38, y: -0, z: 2.56}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7834558519959742959}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &5168772841495844787
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1200113338932991426}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &247047679798309091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1200113338932991426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cec070829e4b23b4783153313922094e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: 0
 --- !u!1 &1645762361684223245
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,7 +43,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.23
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1738084512453458078
 MonoBehaviour:
@@ -159,7 +101,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.23
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6423926782467540558
 MonoBehaviour:
@@ -217,7 +159,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.23
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1610152982950125153
 MonoBehaviour:
@@ -275,7 +217,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.23
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6350342780132431761
 MonoBehaviour:
@@ -333,7 +275,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.23
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5226329324490189753
 MonoBehaviour:
@@ -391,7 +333,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.23
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6748348201611033475
 MonoBehaviour:
@@ -449,7 +391,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.23
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8653135560829110722
 MonoBehaviour:
@@ -604,7 +546,7 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_UseWorldSpace: 0
-  m_Loop: 0
+  m_Loop: 1
 --- !u!1 &7834558519768111684
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,7 +590,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.23
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6744307068026730771
 MonoBehaviour:
@@ -701,7 +643,6 @@ Transform:
   - {fileID: 8731050232940392320}
   - {fileID: 4720095928824927783}
   - {fileID: 2452790232806507179}
-  - {fileID: 1675434147301340180}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
@@ -717,7 +658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3be5f132d0de5a448adebc5f7fc02e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loop: 0
+  loop: 1
 --- !u!1 &8621467984283320322
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,7 +702,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.23
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1154500730082336035
 MonoBehaviour:

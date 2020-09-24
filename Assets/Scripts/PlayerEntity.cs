@@ -107,7 +107,8 @@ public class PlayerEntity : MonoBehaviour
                 if (!_musicPallierReached[previousPallier] && currentSpeed > _musicPallier[previousPallier])
                 {
                     _musicPallierReached[previousPallier] = true;
-                    previousPallier += 1;
+                    if(previousPallier + 1 < _musicPallier.Length)
+                        previousPallier += 1;
                 }
             }
         }
@@ -120,7 +121,8 @@ public class PlayerEntity : MonoBehaviour
                 if (_musicPallierReached[previousPallier] && currentSpeed > _musicPallier[previousPallier])
                 {
                     _musicPallierReached[previousPallier] = false;
-                    previousPallier -= 1;
+                    if(previousPallier - 1 >= 0)
+                        previousPallier -= 1;
                 }
             }
         }
