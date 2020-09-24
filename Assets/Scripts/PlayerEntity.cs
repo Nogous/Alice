@@ -34,6 +34,8 @@ public class PlayerEntity : MonoBehaviour
     public Vector3 offsetRotationAlice;
     private float offsetCamToAlice;
 
+    public float colisionRange = 5f;
+
     #endregion
 
     #region Unity Methods
@@ -75,6 +77,12 @@ public class PlayerEntity : MonoBehaviour
         if (movement == Vector3.zero) return;
 
         transform.localPosition += movement * Time.deltaTime * initMoveSpeed;
+
+        Vector3 tmp = transform.localPosition.normalized * colisionRange;
+        if (transform.localPosition.magnitude >= (tmp.magnitude))
+        {
+            transform.localPosition = transform.localPosition.normalized * colisionRange;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
