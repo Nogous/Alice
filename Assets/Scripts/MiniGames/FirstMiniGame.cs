@@ -25,7 +25,7 @@ public class FirstMiniGame : MonoBehaviour
             {
                 _currentCollectibleInstantiated = 0;
                 miniGameManager.collectiblesPickedUp = 0;
-                StartCoroutine(FirstMinigame());
+                StartCoroutine(StartFirstMinigame());
             }
         };
     }
@@ -39,9 +39,15 @@ public class FirstMiniGame : MonoBehaviour
         }
     }
 
+    private IEnumerator StartFirstMinigame()
+    {
+        yield return new WaitForSeconds(0.5f);
+        StartCoroutine(FirstMinigame());
+    }
+
     private IEnumerator FirstMinigame()
     {
-        ObjectSpawner.instance.InstantiateObject(collectibleTags);
+        ObjectSpawner.instance.InstantiateObject(collectibleTags, ObjectSpawner.instance.xBigOffset, ObjectSpawner.instance.yBigOffset);
         yield return new WaitForSeconds(Random.Range(minBetweenCollectible, maxBetweenCollectible));
         _currentCollectibleInstantiated += 1;
         if (_currentCollectibleInstantiated < numberCollectibleTotal)
