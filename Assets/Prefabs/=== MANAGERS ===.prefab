@@ -261,7 +261,7 @@ MonoBehaviour:
   - Cake
   - Cookie
   _collectibleOffsetX: 1
-  _collectibleOffsetY: 1
+  _collectibleOffsetY: 0.75
 --- !u!114 &4370278639178328739
 MonoBehaviour:
   m_ObjectHideFlags: 0
