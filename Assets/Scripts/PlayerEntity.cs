@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class PlayerEntity : MonoBehaviour
 {
+    #region singleton
+    public static PlayerEntity instance;
+    #endregion
+
     #region Script Parameters
 
     [Header("Speed")]
@@ -33,6 +37,14 @@ public class PlayerEntity : MonoBehaviour
     #endregion
 
     #region Unity Methods
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+    }
 
     private void Start()
     {

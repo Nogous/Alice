@@ -32,6 +32,7 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
+        if (MiniGameManager.instance != null)
         MiniGameManager.instance.onChangeState += () =>
         {
             if(MiniGameManager.instance.state == State.NONE)
