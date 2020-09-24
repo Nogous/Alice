@@ -42,6 +42,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hatTagName: Hat
+  pathFollower: {fileID: 3926227613734970002}
 --- !u!1 &3926227613734970003
 GameObject:
   m_ObjectHideFlags: 0
@@ -52,6 +53,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3926227613734970005}
   - component: {fileID: 3926227613734970002}
+  - component: {fileID: 7029414973993827282}
   m_Layer: 0
   m_Name: Pushable Fowlower
   m_TagString: Untagged
@@ -88,9 +90,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathCreator: {fileID: 0}
   endOfPathInstruction: 0
-  speed: 5
+  speed: -1
   distanceTravelled: 0
   pathOffset: 0
+--- !u!114 &7029414973993827282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3926227613734970003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a189b35900d9ec4bb64da037644dc1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  child: {fileID: 2136211523741502920}
 --- !u!1001 &1886973529577499171
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class PlayerEntity : MonoBehaviour
 {
+    #region singleton
+    public static PlayerEntity instance;
+    #endregion
+
     #region Script Parameters
 
     [Header("Speed")]
@@ -30,9 +34,19 @@ public class PlayerEntity : MonoBehaviour
     public Vector3 offsetRotationAlice;
     private float offsetCamToAlice;
 
+    public float colisionRange = 5f;
+
     #endregion
 
     #region Unity Methods
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+    }
 
     private void Start()
     {
@@ -63,6 +77,12 @@ public class PlayerEntity : MonoBehaviour
         if (movement == Vector3.zero) return;
 
         transform.localPosition += movement * Time.deltaTime * initMoveSpeed;
+
+        Vector3 tmp = transform.localPosition.normalized * colisionRange;
+        if (transform.localPosition.magnitude >= (tmp.magnitude))
+        {
+            transform.localPosition = transform.localPosition.normalized * colisionRange;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -75,6 +95,7 @@ public class PlayerEntity : MonoBehaviour
             TakeDamage(takeDamage);
 
             Destroy(collision.gameObject);
+            AudioManager.instance.Play("BodyImpact");
         }
     }
 
