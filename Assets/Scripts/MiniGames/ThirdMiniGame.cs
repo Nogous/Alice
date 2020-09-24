@@ -84,16 +84,35 @@ public class ThirdMiniGame : MonoBehaviour
         }
         else if (_numberTriggerActivated == 1)
         {
-            if((triggerId == _previousTriggerId + 1) || (triggerId == _numberTriggerToActivate - 1 && _previousTriggerId == 0))
+            if((triggerId == _previousTriggerId + 1) || (triggerId == 0 && _previousTriggerId == _numberTriggerToActivate - 1))
             {
+                if(!shouldLoop){
+                    if ((triggerId == 0 && _previousTriggerId == _numberTriggerToActivate - 1))
+                    {
+                        AudioManager.instance.Play("Wrong");
+                        _numberTriggerActivated = 0;
+                        return;
+                    }
+                }
                 triggersGoUp = true;
+
             }
-            else if((triggerId == _previousTriggerId - 1) || (triggerId == 0 && _previousTriggerId == _numberTriggerToActivate - 1))
+            else if((triggerId == _previousTriggerId - 1) || (triggerId == _numberTriggerToActivate - 1 && _previousTriggerId == 0))
             {
+                if(!shouldLoop)
+                {
+                    if((triggerId == _numberTriggerToActivate - 1 && _previousTriggerId == 0))
+                    {
+                        AudioManager.instance.Play("Wrong");
+                        _numberTriggerActivated = 0;
+                        return;
+                    }
+                }
                 triggersGoUp = false;
             }
             else
             {
+                AudioManager.instance.Play("Wrong");
                 _numberTriggerActivated = 0;
                 return;
             }
@@ -106,6 +125,7 @@ public class ThirdMiniGame : MonoBehaviour
             {
                 if (!(triggerId == _previousTriggerId + 1) && !(triggerId == 0 && _previousTriggerId == _numberTriggerToActivate - 1))
                 {
+                    AudioManager.instance.Play("Wrong");
                     _numberTriggerActivated = 0;
                     return;
                 }
@@ -114,6 +134,7 @@ public class ThirdMiniGame : MonoBehaviour
             {
                 if (!(triggerId == _previousTriggerId - 1) && !(triggerId == _numberTriggerToActivate - 1 && _previousTriggerId == 0))
                 {
+                    AudioManager.instance.Play("Wrong");
                     _numberTriggerActivated = 0;
                     return;
                 }
@@ -128,14 +149,15 @@ public class ThirdMiniGame : MonoBehaviour
     {
         if (shouldLoop)
         {
-            print("loop");
             if (_numberTriggerActivated == _numberTriggerToActivate + 1)
             {
                 if (lastId != _firstTriggerId)
                 {
+                    AudioManager.instance.Play("Wrong");
                     _numberTriggerActivated = 0;
                     return;
                 }
+                AudioManager.instance.Play("Correct");
                 Destroy(currentShape.gameObject);
                 //round coiunt if many rounds
                 CheckIfInstantiateNewShape();
@@ -143,6 +165,7 @@ public class ThirdMiniGame : MonoBehaviour
         }
         else if(_numberTriggerActivated == _numberTriggerToActivate)
         {
+            AudioManager.instance.Play("Correct");
             Destroy(currentShape.gameObject);
             //round coiunt if many rounds
             CheckIfInstantiateNewShape();
@@ -157,7 +180,8 @@ public class ThirdMiniGame : MonoBehaviour
         }
         else
         {
-            print("finish");
+            miniGameManager.state = State.NONE;
+            if (miniGameManager.onChangeState != null) miniGameManager.onChangeState.Invoke();
         }
     }
 

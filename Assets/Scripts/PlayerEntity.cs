@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class PlayerEntity : MonoBehaviour
 {
+    #region singleton
+    public static PlayerEntity instance;
+    #endregion
+
     #region Script Parameters
 
     [Header("Speed")]
@@ -14,6 +18,9 @@ public class PlayerEntity : MonoBehaviour
     public float acceleration = .5f;
     [SerializeField] private float currentSpeed = 5f;
     public float looseSpeed = .5f;
+
+    public float inertyForce = 1;
+    private Vector3 inertie = Vector3.zero;
 
     [Header("life")]
     public int life = 5;
@@ -30,9 +37,19 @@ public class PlayerEntity : MonoBehaviour
     public Vector3 offsetRotationAlice;
     private float offsetCamToAlice;
 
+    public float colisionRange = 5f;
+
     #endregion
 
     #region Unity Methods
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+    }
 
     private void Start()
     {
@@ -60,9 +77,27 @@ public class PlayerEntity : MonoBehaviour
             follower.speed = currentSpeed;
         }
 
-        if (movement == Vector3.zero) return;
+        //if (movement == Vector3.zero) return;
 
-        transform.localPosition += movement * Time.deltaTime * initMoveSpeed;
+        Debug.DrawRay(transform.position, inertie, Color.blue);
+        inertie -= inertie.normalized*Time.deltaTime / inertyForce;
+        Debug.DrawRay(transform.position, -inertie, Color.red);
+        inertie += movement/(10*Time.deltaTime);
+        if(inertie.magnitude > inertie.normalized.magnitude)
+        {
+            inertie = inertie.normalized;
+        }
+        
+
+        //mouvement fix
+        transform.localPosition += inertie * Time.deltaTime * initMoveSpeed;
+
+        Vector3 tmp = transform.localPosition.normalized * colisionRange;
+        if (transform.localPosition.magnitude >= (tmp.magnitude))
+        {
+            transform.localPosition = transform.localPosition.normalized * colisionRange;
+        }
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -75,6 +110,7 @@ public class PlayerEntity : MonoBehaviour
             TakeDamage(takeDamage);
 
             Destroy(collision.gameObject);
+            AudioManager.instance.Play("BodyImpact");
         }
     }
 
