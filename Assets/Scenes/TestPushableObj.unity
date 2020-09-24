@@ -772,6 +772,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5570021722925774884, guid: 4e09777ce4044604986d2eadf98f4786,
         type: 3}
+      propertyPath: obstacleTags.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5570021722925774884, guid: 4e09777ce4044604986d2eadf98f4786,
+        type: 3}
       propertyPath: obstacleSpawnPoint
       value: 
       objectReference: {fileID: 1514519769}
@@ -785,6 +790,11 @@ PrefabInstance:
       propertyPath: mainPath
       value: 
       objectReference: {fileID: 1332622581}
+    - target: {fileID: 5570021722925774884, guid: 4e09777ce4044604986d2eadf98f4786,
+        type: 3}
+      propertyPath: obstacleTags.Array.data[2]
+      value: Hat
+      objectReference: {fileID: 0}
     - target: {fileID: 5570021722925774885, guid: 4e09777ce4044604986d2eadf98f4786,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2439,6 +2449,27 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObjectPooler
       objectReference: {fileID: 0}
+    - target: {fileID: 1073896566532245662, guid: b92162bf315417240a5b489fe675a8f7,
+        type: 3}
+      propertyPath: pools.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073896566532245662, guid: b92162bf315417240a5b489fe675a8f7,
+        type: 3}
+      propertyPath: pools.Array.data[3].tag
+      value: Hat
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073896566532245662, guid: b92162bf315417240a5b489fe675a8f7,
+        type: 3}
+      propertyPath: pools.Array.data[3].prefab
+      value: 
+      objectReference: {fileID: 3926227613734970003, guid: a37a5d19952d43e4fb849974594f384a,
+        type: 3}
+    - target: {fileID: 1073896566532245662, guid: b92162bf315417240a5b489fe675a8f7,
+        type: 3}
+      propertyPath: pools.Array.data[3].size
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1073896566532245663, guid: b92162bf315417240a5b489fe675a8f7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2774,7 +2805,7 @@ PrefabInstance:
     - target: {fileID: 3926227613734970003, guid: a37a5d19952d43e4fb849974594f384a,
         type: 3}
       propertyPath: m_Name
-      value: Pushable Fowlower (1)
+      value: Hat
       objectReference: {fileID: 0}
     - target: {fileID: 3926227613734970005, guid: a37a5d19952d43e4fb849974594f384a,
         type: 3}
@@ -2784,7 +2815,7 @@ PrefabInstance:
     - target: {fileID: 3926227613734970005, guid: a37a5d19952d43e4fb849974594f384a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.929
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3926227613734970005, guid: a37a5d19952d43e4fb849974594f384a,
         type: 3}

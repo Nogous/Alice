@@ -15,6 +15,7 @@ public class TimerUI : MonoBehaviour
 
     private void Update()
     {
+        if(timerText != null && TimerScore.instance != null)
         timerText.text = Mathf.RoundToInt(TimerScore.instance.GetTimer()).ToString();
     }
 

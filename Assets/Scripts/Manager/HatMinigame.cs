@@ -41,6 +41,8 @@ public class HatMinigame : MonoBehaviour
         if(MiniGameManager.instance!=null)
         if (MiniGameManager.instance.state != State.FOURTHMG) return;
 
+        timerSpawn -= Time.deltaTime;
+
         if (timerSpawn<= 0f)
         {
             if (_currentCollectibleInstantiated > _numberCollectibleTotal)
