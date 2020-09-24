@@ -43,8 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc2648e1fafdcb64e87afa8587a94fad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minTimeBetweenObstacles: 1
-  maxTimeBetweenObstacles: 4
+  minTimeBetweenObstacles: 5
+  maxTimeBetweenObstacles: 7
   obstacleTags:
   - Armchair
   - Bed

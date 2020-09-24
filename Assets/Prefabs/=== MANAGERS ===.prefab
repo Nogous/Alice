@@ -260,7 +260,7 @@ MonoBehaviour:
   collectibleTags:
   - Cake
   - Cookie
-  _collectibleOffsetX: 1
+  _collectibleOffsetX: 0.75
   _collectibleOffsetY: 0.75
 --- !u!114 &4370278639178328739
 MonoBehaviour:
@@ -640,11 +640,6 @@ PrefabInstance:
         type: 3}
       propertyPath: mainPath
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5570021722925774884, guid: 4e09777ce4044604986d2eadf98f4786,
-        type: 3}
-      propertyPath: minTimeBetweenObstacles
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5570021722925774885, guid: 4e09777ce4044604986d2eadf98f4786,
         type: 3}
