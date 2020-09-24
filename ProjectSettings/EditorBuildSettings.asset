@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 2d3efb49820b9ae4cab7dad64717c919
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Camille.unity
     guid: 4d4b06330c1912f4493a21a6cb29acc7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MatPathObstacle.unity
     guid: 80d7cd5c5db2f884cac75f5fcb2eb120
   - enabled: 1
