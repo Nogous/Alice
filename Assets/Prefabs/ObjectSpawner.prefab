@@ -68,7 +68,9 @@ MonoBehaviour:
   - TeaColumn
   - TeaCup
   - TeaPot
-  xOffset: 3
+  xOffset: 0.5
   yOffset: 3
+  xBigOffset: 3
+  yBigOffset: 3
   obstacleSpawnPoint: {fileID: 0}
   mainPath: {fileID: 0}
