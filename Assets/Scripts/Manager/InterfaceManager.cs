@@ -6,10 +6,18 @@ using UnityEngine.SceneManagement;
 public class InterfaceManager : MonoBehaviour
 {
 
+    public static InterfaceManager instance;
+
     [SerializeField] private GameObject gamePanel;
     [SerializeField] private GameObject pausePanel;
+    [SerializeField] private GameObject gameOverPanel;
 
-    private bool isInPause = false;
+    public bool isInPause = false;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
 
     // Start is called before the first frame update
@@ -17,6 +25,18 @@ public class InterfaceManager : MonoBehaviour
     {
         gamePanel.SetActive(true);
         pausePanel.SetActive(false);
+
+        MiniGameManager.instance.onChangeState += () =>
+        {
+            if (MiniGameManager.instance.state == State.DEAD)
+            {
+                Time.timeScale = 0;
+                gameOverPanel.SetActive(true);
+                gamePanel.SetActive(false);
+                pausePanel.SetActive(false);
+            }
+        };
+
     }
 
     // Update is called once per frame

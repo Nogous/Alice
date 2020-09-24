@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4927572509124581532}
   m_Layer: 0
   m_Name: Cake
-  m_TagString: Obstacle
+  m_TagString: Collectible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a189b35900d9ec4bb64da037644dc1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  child: {fileID: 0}
+  child: {fileID: 3085155805298110204}
 --- !u!1 &3085155805298110195
 GameObject:
   m_ObjectHideFlags: 0
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 3085155805298110205}
   m_Layer: 0
   m_Name: Parents
-  m_TagString: Obstacle
+  m_TagString: Collectible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,7 +103,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3085155805298110195}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.7187797, y: 0.39260006, z: 0.7245363}

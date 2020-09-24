@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 8793024435758764403}
   - component: {fileID: 3577221050081463262}
   m_Layer: 0
-  m_Name: Book_Closer
+  m_Name: Book_Closed
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathCreator: {fileID: 0}
   endOfPathInstruction: 0
-  speed: -8
+  speed: -3
   distanceTravelled: 0
   pathOffset: 0
 --- !u!114 &3577221050081463262
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a189b35900d9ec4bb64da037644dc1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  child: {fileID: 0}
+  child: {fileID: 6851728043694177726}
 --- !u!1001 &243500973629427755
 PrefabInstance:
   m_ObjectHideFlags: 0

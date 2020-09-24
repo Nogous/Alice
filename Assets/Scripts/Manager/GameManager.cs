@@ -48,11 +48,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void PlayerDead()
     {
-        
+        MiniGameManager.instance.ChangeState(State.DEAD);
     }
 }

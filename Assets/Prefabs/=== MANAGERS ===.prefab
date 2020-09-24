@@ -247,6 +247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
+  previousState: 0
   collectiblesPickedUp: 0
 --- !u!114 &2781175532223923807
 MonoBehaviour:
@@ -264,6 +265,9 @@ MonoBehaviour:
   maxBetweenCollectible: 4
   numberCollectibleTotal: 10
   numberCollectibleToPass: 3
+  collectibleTags:
+  - Cake
+  - Cookie
 --- !u!114 &6491477589158909778
 MonoBehaviour:
   m_ObjectHideFlags: 0
