@@ -6,14 +6,14 @@ ENG_BLA_04,Flat Hat,To play  use the keyboards arrows or ZQSD to move Alice,0
 ENG_BLA_05,Flat Hat,Try to avoid the obstacles coming at you.,0
 ENG_BLA_06,,I'll let you play now   good luck with the fall!,0
 ENG_BLA_07,,endphase_1,
-ENG_FMG_01/,Flat Hat,Nice going !/,0
-ENG_FMG_02/,Flat Hat,Now for somehting a tad more difficult./,0
-ENG_FMG_03,Flat Hat,Try to catch those capsule looking things okay ?/,0
-ENG_FMG_04,,endphase_3/,
-ENG_SMG_01/,Flat Hat,So are you getting the hang of it ?/,0
-ENG_SMG_02,Flat Hat,try this one next./,0
-ENG_SMG_03,Flat Hat,Follow the shape good luck/,0
-ENG_SMG_04/,,endphase_5/,
+ENG_FMG_01,Flat Hat,Nice going !,0
+ENG_FMG_02,Flat Hat,Now for somehting a tad more difficult.,0
+ENG_FMG_03,Flat Hat,Try to catch those capsule looking things okay ?,0
+ENG_FMG_04,,endphase_3,
+ENG_SMG_01,Flat Hat,So are you getting the hang of it ?,0
+ENG_SMG_02,Flat Hat,try this one next.,0
+ENG_SMG_03,Flat Hat,Follow the shape good luck,0
+ENG_SMG_04,,endphase_5,
 FR_BLA_01,Chapeau Tuto,Bonjour ! (appuie sur espace pour continuer le dialogue),0
 FR_BLA_02,Chapeau Tuto,Ce jeu est encore une démo.,0
 FR_BLA_03,Chapeau Tuto,Il y aura donc quelques bug. N'hésite pas à les communiquer à l'équipe !,0

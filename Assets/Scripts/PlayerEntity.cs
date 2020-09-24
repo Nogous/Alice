@@ -18,6 +18,10 @@ public class PlayerEntity : MonoBehaviour
     public float acceleration = .5f;
     [SerializeField] private float currentSpeed = 5f;
     public float looseSpeed = .5f;
+    private bool canSpeedUp = false;
+    private float[] _musicPallier;
+    private bool[] _musicPallierReached;
+    public int previousPallier = 0;
 
     [Header("inertie")]
     public bool inertieOff = false;
@@ -59,6 +63,28 @@ public class PlayerEntity : MonoBehaviour
     {
         currentSpeed = initMoveSpeed;
         offsetCamToAlice = cam.transform.localPosition.z;
+
+        previousPallier = 0;
+        _musicPallier = new float[5];
+        _musicPallierReached = new bool[5];
+        for(int i = 0; i < _musicPallier.Length; i++)
+        {
+            _musicPallier[i] = (i) * (moveSpeedMax / 5);
+            _musicPallierReached[i] = false;
+        }
+
+        MiniGameManager.instance.onChangeState += () =>
+        {
+            if(MiniGameManager.instance.state == State.NONE)
+            {
+                canSpeedUp = false;
+            }
+            else
+            {
+                canSpeedUp = true;
+            }
+        };
+
     }
 
     private void Update()
@@ -72,9 +98,17 @@ public class PlayerEntity : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (currentSpeed < moveSpeedMax)
+        if (currentSpeed < moveSpeedMax && canSpeedUp)
         {
             currentSpeed += acceleration * Time.fixedDeltaTime;
+            if(previousPallier < _musicPallier.Length)
+            {
+                if (!_musicPallierReached[previousPallier] && currentSpeed > _musicPallier[previousPallier])
+                {
+                    _musicPallierReached[previousPallier] = true;
+                    previousPallier += 1;
+                }
+            }
         }
 
         foreach(PathFollower follower in followers)
@@ -107,6 +141,15 @@ public class PlayerEntity : MonoBehaviour
         if (transform.localPosition.magnitude >= (tmp.magnitude))
         {
             transform.localPosition = transform.localPosition.normalized * colisionRange;
+        }
+
+
+        if (MiniGameManager.instance.state != State.NONE && MiniGameManager.instance.state != State.TUTO)
+        {
+            if (!AudioManager.instance.CheckAudioClip(previousPallier) && AudioManager.instance.canPlayMusic)
+            {
+                AudioManager.instance.Play("Music", previousPallier, true);
+            }
         }
 
     }

@@ -452,6 +452,11 @@ PrefabInstance:
       propertyPath: mainPath
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5570021722925774884, guid: 4e09777ce4044604986d2eadf98f4786,
+        type: 3}
+      propertyPath: minTimeBetweenObstacles
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5570021722925774885, guid: 4e09777ce4044604986d2eadf98f4786,
         type: 3}
       propertyPath: m_LocalPosition.x
