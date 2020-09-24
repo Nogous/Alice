@@ -36,9 +36,9 @@ public class AudioManager : MonoBehaviour
         {
             if(MiniGameManager.instance.state == State.NONE)
             {
-                Play("Music", 0, false);
+                StartCoroutine(FadeOutBeforeNewMusic("Music", "Music", 0));
             }
-            else if (MiniGameManager.instance.state == State.FIRSTMG)
+            else
             {
                 StartCoroutine(FadeOutBeforeNewMusic("Music", "Music", 1));
             }
