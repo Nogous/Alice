@@ -16,6 +16,7 @@ public class PlayerEntity : MonoBehaviour
     public float moveSpeedMax = 10f;
     public float moveSpeedMin = 1f;
     public float acceleration = .5f;
+    public float deceleration = 1f;
     [SerializeField] private float currentSpeed = 5f;
     public float looseSpeed = .5f;
     private bool canSpeedUp = false;
@@ -107,6 +108,19 @@ public class PlayerEntity : MonoBehaviour
                 {
                     _musicPallierReached[previousPallier] = true;
                     previousPallier += 1;
+                }
+            }
+        }
+
+        if (currentSpeed > moveSpeedMin && !canSpeedUp)
+        {
+            currentSpeed -= deceleration * Time.fixedDeltaTime;
+            if (previousPallier >= 0)
+            {
+                if (_musicPallierReached[previousPallier] && currentSpeed > _musicPallier[previousPallier])
+                {
+                    _musicPallierReached[previousPallier] = false;
+                    previousPallier -= 1;
                 }
             }
         }
