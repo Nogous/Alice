@@ -13,6 +13,7 @@ public class PortalPathToPath : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             MasterPath.instance.SwitchMainPath(idNextPath);
+            gameObject.SetActive(false);
         }
     }
 }
