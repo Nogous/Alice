@@ -123,6 +123,14 @@ public class PlayerEntity : MonoBehaviour
             Destroy(collision.gameObject);
             AudioManager.instance.Play("BodyImpact");
         }
+        PortalPathToPath tmpPath = collision.gameObject.GetComponent<PortalPathToPath>();
+        if (tmpPath != null)
+        {
+            Debug.Log("hit portal");
+            Debug.Log(tmpPath.idNextPath);
+            MasterPath.instance.SwitchMainPath(tmpPath.idNextPath);
+            collision.gameObject.SetActive(false);
+        }
     }
 
     #endregion

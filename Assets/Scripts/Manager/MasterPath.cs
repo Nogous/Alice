@@ -19,7 +19,7 @@ public class MasterPath : MonoBehaviour
     
     [Header("References")]
     public PathCreation.PathCreator mainPath;
-    public PathCreation.Examples.PathFollower playerPath;
+    public PathCreation.Examples.PathFollower playerPathFollower;
     public PathCreation.Examples.PathFollower obstacleSpawner;
     public PathCreation.Examples.PathFollower obstacleDestroyer;
 
@@ -40,8 +40,8 @@ public class MasterPath : MonoBehaviour
     {
         mainPath = paths[id];
 
-        playerPath.SetPathCreator(mainPath);
-        playerPath.SetDistanceInPath(0);
+        playerPathFollower.SetPathCreator(mainPath);
+        playerPathFollower.SetDistanceInPath(0);
 
         obstacleSpawner.SetPathCreator(mainPath);
         obstacleSpawner.SetPathOffset(spawnerDistance);
