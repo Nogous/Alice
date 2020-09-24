@@ -199,12 +199,15 @@ MonoBehaviour:
   acceleration: 0.5
   currentSpeed: 5
   looseSpeed: 0.5
+  speedPlan: 7.8
+  inertyForce: 0.52
   life: 5
   invicibilityFrameDuration: 0.1
   takeDamage: 1
   followers: []
   cam: {fileID: 529321321}
-  offsetRotationAlice: {x: 0, y: -90, z: 90}
+  offsetRotationAlice: {x: 180, y: -90, z: 90}
+  colisionRange: 5
 --- !u!114 &178229758
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MatPathObstacle.unity
     guid: 80d7cd5c5db2f884cac75f5fcb2eb120
+  - enabled: 1
+    path: Assets/Scenes/FirstBuildScene.unity
+    guid: 858b4ea855e2f484a8a431a78a2ee579
   m_configObjects: {}

@@ -58,8 +58,7 @@ public class ThirdMiniGame : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.T) && GameManager.instance.onDebugMode)
         {
-            miniGameManager.state = State.THIRDMG;
-            if (miniGameManager.onChangeState != null) miniGameManager.onChangeState.Invoke();
+            miniGameManager.ChangeState(State.THIRDMG);
         }
     }
 
@@ -180,8 +179,7 @@ public class ThirdMiniGame : MonoBehaviour
         }
         else
         {
-            miniGameManager.state = State.NONE;
-            if (miniGameManager.onChangeState != null) miniGameManager.onChangeState.Invoke();
+            miniGameManager.ChangeState(State.NONE);
         }
     }
 

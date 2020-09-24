@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum State { NONE, FIRSTMG, SECONDMG, THIRDMG, FOURTHMG}
+public enum State { NONE, FIRSTMG, SECONDMG, THIRDMG, FOURTHMG, TUTO}
 public class MiniGameManager : MonoBehaviour
 {
 
@@ -25,16 +25,10 @@ public class MiniGameManager : MonoBehaviour
         instance = this;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void ChangeState(State newState)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        state = newState;
+        if (onChangeState != null) onChangeState.Invoke();
     }
 
 }
