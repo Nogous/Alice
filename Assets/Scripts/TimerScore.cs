@@ -47,10 +47,15 @@ public class TimerScore : MonoBehaviour
         _isRunning = false;
     }
 
-    public float ReturnTimer()
+    public float EndTimer()
     {
         _isRunning = false;
 
+        return _currentTimer;
+    }
+
+    public float GetTimer()
+    {
         return _currentTimer;
     }
 }
