@@ -1,15 +1,31 @@
 id,name,descr,int character
-ENG_BLA_01,Asougi,Objection,0
-ENG_BLA_02,Suga,Good serve !,0
-ENG_BLA_03,Spanner,supanna,1
-ENG_BLA_04,Diarmuid,Lancer,0
-ENG_BLA_05,Karma,Akabane,1
-ENG_BLA_06,Matsu,f6!,0
-ENG_BLA_07,,end,
-FR_BLA_01,Hasogui,objékssion,0
-FR_BLA_02,Sous Gars,Bon service !,0
-FR_BLA_03,Clé à molette,suhana,1
-FR_BLA_04,Dit amour,Lancier,0
-FR_BLA_05,Retour du baton,Bané rouge,1
-FR_BLA_06,Sapin,!6f,0
-FR_BLA_07,,end,
+ENG_BLA_01,Flat Hat,Hello there! (Press Space to continue the dialogue),0
+ENG_BLA_02,Flat Hat,This game is still only a demo.,0
+ENG_BLA_03,Flat Hat,Please forgive any bugs you might encounter  but do report them if you can.,0
+ENG_BLA_04,Flat Hat,To play  use the keyboards arrows or ZQSD to move Alice,0
+ENG_BLA_05,Flat Hat,Try to avoid the obstacles coming at you.,0
+ENG_BLA_06,Flat Hat,I'll let you play now   good luck with the fall!,0
+ENG_BLA_07,,endphase_1,
+ENG_FMG_01,Flat Hat,Nice going !,0
+ENG_FMG_02,Flat Hat,Now for somehting a tad more difficult.,0
+ENG_FMG_03,Flat Hat,Try to catch those capsule looking things okay ?,0
+ENG_FMG_04,,endphase_3,
+ENG_SMG_01,Flat Hat,So are you getting the hang of it ?,0
+ENG_SMG_02,Flat Hat,try this one next.,0
+ENG_SMG_03,Flat Hat,Follow the shape good luck,0
+ENG_SMG_04,,endphase_5,
+FR_BLA_01,Chapeau Tuto,Bonjour ! (appuie sur espace pour continuer le dialogue),0
+FR_BLA_02,Chapeau Tuto,Ce jeu est encore une démo.,0
+FR_BLA_03,Chapeau Tuto,Il y aura donc quelques bug. N'hésite pas à les communiquer à l'équipe !,0
+FR_BLA_04,Chapeau Tuto,Utilise les flèches ou WASD pour déplacer Alice,0
+FR_BLA_05,Chapeau Tuto,Essaye d'éviter les obstacles.,0
+FR_BLA_06,Chapeau Tuto,Courage!,0
+FR_BLA_07,,endphase_1,
+FR_FMG_01,Chapeau Tuto,Bravo !,0
+FR_FMG_02,Chapeau Tuto,Essayons quelque chose de plus compliqué!,0
+FR_FMG_03,Chapeau Tuto,Essaye d'attraper ces petites capsules,0
+FR_FMG_04,,endphase_3,
+FR_SMG_01,Chapeau Tuto,Tu te débrouille bien !,0
+FR_SMG_02,Chapeau Tuto,Continuons !,0
+FR_SMG_03,Chapeau Tuto,Trace les formes,0
+FR_SMG_04,,endphase_5,
