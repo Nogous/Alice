@@ -92,7 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathCreator: {fileID: 0}
   endOfPathInstruction: 0
-  speed: -8
+  speed: -5
   distanceTravelled: 0
   pathOffset: 0
 --- !u!114 &4493049446737138168
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a189b35900d9ec4bb64da037644dc1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  child: {fileID: 0}
+  child: {fileID: 5830025611952170904}
 --- !u!1001 &5830025611252413476
 PrefabInstance:
   m_ObjectHideFlags: 0

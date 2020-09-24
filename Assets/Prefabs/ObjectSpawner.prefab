@@ -46,8 +46,28 @@ MonoBehaviour:
   minTimeBetweenObstacles: 1
   maxTimeBetweenObstacles: 3.5
   obstacleTags:
-  - Table
-  - TeaCups
+  - Armchair
+  - Bed
+  - BookClosed
+  - BookOpen
+  - Candlestick
+  - CardGroup
+  - CardSingle
+  - Chair
+  - Clock
+  - FlowerVase
+  - Globe
+  - HorsePieceA
+  - HorsePieceB
+  - Lamp
+  - Painting
+  - PedestalTable
+  - Pendulum
+  - PepperMill
+  - PocketWatch
+  - TeaColumn
+  - TeaCup
+  - TeaPot
   xOffset: 3
   yOffset: 3
   obstacleSpawnPoint: {fileID: 0}

@@ -12,6 +12,7 @@ public class FirstMiniGame : MonoBehaviour
     [SerializeField] private float maxBetweenCollectible = 4;
     [SerializeField] private int numberCollectibleTotal = 10;
     [SerializeField] private int numberCollectibleToPass = 3;
+    [SerializeField] private string[] collectibleTags;
 
     // Start is called before the first frame update
     void Start()
@@ -40,14 +41,14 @@ public class FirstMiniGame : MonoBehaviour
 
     private IEnumerator FirstMinigame()
     {
-        ObjectSpawner.instance.InstantiateObject("Collectible");
+        ObjectSpawner.instance.InstantiateObject(collectibleTags);
         yield return new WaitForSeconds(Random.Range(minBetweenCollectible, maxBetweenCollectible));
         _currentCollectibleInstantiated += 1;
         if (_currentCollectibleInstantiated < numberCollectibleTotal)
             StartCoroutine(FirstMinigame());
         else
         {
-            CheckIfMiniGamePassed();
+            StartCoroutine(WaitAndEndFirstMiniGame());
         }
     }
 
@@ -66,5 +67,11 @@ public class FirstMiniGame : MonoBehaviour
         }
         MiniGameManager.instance.ChangeState(State.NONE);
         if (GameManager.instance.onPhaseChange != null) GameManager.instance.onPhaseChange.Invoke(4);
+    }
+
+    private IEnumerator WaitAndEndFirstMiniGame()
+    {
+        yield return new WaitForSeconds(2f);
+        CheckIfMiniGamePassed();
     }
 }

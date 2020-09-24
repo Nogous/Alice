@@ -66,7 +66,8 @@ public class PlayerEntity : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        UpdateRotation();
+        if(!InterfaceManager.instance.isInPause)
+            UpdateRotation();
     }
 
     private void FixedUpdate()
