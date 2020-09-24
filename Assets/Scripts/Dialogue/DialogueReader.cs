@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class DialogueReader : MonoBehaviour
 {
 
+    public static DialogueReader instance;
+
     List<Dialogue> allDialogues = new List<Dialogue>();
     Dictionary<string, Dialogue> dialogueDictionnary = new Dictionary<string, Dialogue>();
 
@@ -19,14 +21,20 @@ public class DialogueReader : MonoBehaviour
     [SerializeField] private Transform _characterTalkingPlace;
     [SerializeField] private string _language;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
+        if(instance != this && instance != null)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        instance = this;
+
         TextAsset dialogueData = Resources.Load<TextAsset>("DialogueInfo");
 
         string[] data = dialogueData.text.Split(new char[] { '\n' });
 
-        for(int i = 1; i < data.Length; i++)
+        for (int i = 1; i < data.Length; i++)
         {
             string[] row = data[i].Split(new char[] { ',' });
             Dialogue dial = new Dialogue();
@@ -40,8 +48,13 @@ public class DialogueReader : MonoBehaviour
             dialogueDictionnary.Add(dial.key, dial);
         }
 
-        if(ValueHolder.instance)
+        if (ValueHolder.instance)
             _language = ValueHolder.instance.gameLanguage;
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
 
     }
 
@@ -56,13 +69,18 @@ public class DialogueReader : MonoBehaviour
         {
             CheckDialogue(_dialogueContext, _dialogueIndex);
         }
+
+        if(!GameManager.instance.onDebugMode && Input.GetKeyDown(KeyCode.Space))
+        {
+            CheckDialogue(_dialogueContext, _dialogueIndex);
+        }
     }
 
-    private void CheckDialogue(string context, int id)
+    public void CheckDialogue(string context, int id)
     {
         string temp = id.ToString("D2");
         string dialogueKey = _language + "_" + context + "_" + temp;
-        if (dialogueDictionnary[dialogueKey].dialogue != "end")
+        if (!dialogueDictionnary[dialogueKey].dialogue.Contains("endphase"))
         {
             if (dialogueDictionnary[dialogueKey].characterModel != _previousCharacterTalking || !_characterTalkingPlace.gameObject.activeSelf)
             {
@@ -83,6 +101,12 @@ public class DialogueReader : MonoBehaviour
         }
         else
         {
+            int newPhase = 0;
+            string[] phaseRow = dialogueDictionnary[dialogueKey].dialogue.Split(new char[] { '_' });
+            int.TryParse(phaseRow[1], out newPhase);
+            print(dialogueDictionnary[dialogueKey].dialogue);
+            print(newPhase);
+            if (GameManager.instance.onPhaseChange != null) GameManager.instance.onPhaseChange.Invoke(newPhase);
             _dialoguePanel.SetActive(false);
             _characterTalkingPlace.gameObject.SetActive(false);
             _dialogueIndex = 1;

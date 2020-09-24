@@ -33,11 +33,15 @@ public class ObjectSpawner : MonoBehaviour
     {
         objectPooler = ObjectPooler.instance;
 
-
-        if (!GameManager.instance.onDebugMode)
+        MiniGameManager.instance.onChangeState += () =>
         {
-            StartCoroutine(WaitAndSpawnObjects());
-        }
+            if (MiniGameManager.instance.state == State.TUTO)
+            {
+                StartCoroutine(WaitAndSpawnObjects());
+                StartCoroutine(WaitAndEndTuto());
+            }
+        };
+    
     }
 
     // Update is called once per frame
@@ -49,6 +53,14 @@ public class ObjectSpawner : MonoBehaviour
         }
     }
 
+    IEnumerator WaitAndEndTuto()
+    {
+        yield return new WaitForSeconds(15);
+        StopAllCoroutines();
+        MiniGameManager.instance.ChangeState(State.NONE);
+        if (GameManager.instance.onPhaseChange != null) GameManager.instance.onPhaseChange.Invoke(2);
+    }
+
     private IEnumerator WaitAndSpawnObjects()
     {
             yield return new WaitForSeconds(0.5f);
@@ -58,7 +70,7 @@ public class ObjectSpawner : MonoBehaviour
     private IEnumerator SpawnObjects()
     {
         InstantiateObject();
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.5f);
         InstantiateObject();
         yield return new WaitForSeconds(Random.Range(minTimeBetweenObstacles, maxTimeBetweenObstacles));
         StartCoroutine(SpawnObjects());
