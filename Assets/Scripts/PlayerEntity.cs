@@ -19,6 +19,9 @@ public class PlayerEntity : MonoBehaviour
     [SerializeField] private float currentSpeed = 5f;
     public float looseSpeed = .5f;
 
+    public float inertyForce = 1;
+    private Vector3 inertie = Vector3.zero;
+
     [Header("life")]
     public int life = 5;
     public float invicibilityFrameDuration = .1f;
@@ -74,15 +77,27 @@ public class PlayerEntity : MonoBehaviour
             follower.speed = currentSpeed;
         }
 
-        if (movement == Vector3.zero) return;
+        //if (movement == Vector3.zero) return;
 
-        transform.localPosition += movement * Time.deltaTime * initMoveSpeed;
+        Debug.DrawRay(transform.position, inertie, Color.blue);
+        inertie -= inertie.normalized*Time.deltaTime / inertyForce;
+        Debug.DrawRay(transform.position, -inertie, Color.red);
+        inertie += movement/(10*Time.deltaTime);
+        if(inertie.magnitude > inertie.normalized.magnitude)
+        {
+            inertie = inertie.normalized;
+        }
+        
+
+        //mouvement fix
+        transform.localPosition += inertie * Time.deltaTime * initMoveSpeed;
 
         Vector3 tmp = transform.localPosition.normalized * colisionRange;
         if (transform.localPosition.magnitude >= (tmp.magnitude))
         {
             transform.localPosition = transform.localPosition.normalized * colisionRange;
         }
+
     }
 
     private void OnCollisionEnter(Collision collision)
