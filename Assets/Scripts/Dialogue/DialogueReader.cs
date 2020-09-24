@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
+
 
 public class DialogueReader : MonoBehaviour
 {
@@ -50,6 +52,9 @@ public class DialogueReader : MonoBehaviour
 
         if (ValueHolder.instance)
             _language = ValueHolder.instance.gameLanguage;
+
+
+
     }
 
     // Start is called before the first frame update
@@ -61,14 +66,14 @@ public class DialogueReader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.instance.onDebugMode && Input.GetKeyUp(KeyCode.O))
-        {
-            CheckDialogue("BLA", 4);
-        }
-        else if (GameManager.instance.onDebugMode && Input.GetKeyUp(KeyCode.L))
-        {
-            CheckDialogue(_dialogueContext, _dialogueIndex);
-        }
+        //if (GameManager.instance.onDebugMode && Input.GetKeyUp(KeyCode.O))
+        //{
+        //    CheckDialogue("BLA", 4);
+        //}
+        //else if (GameManager.instance.onDebugMode && Input.GetKeyUp(KeyCode.L))
+        //{
+        //    CheckDialogue(_dialogueContext, _dialogueIndex);
+        //}
 
         if(!GameManager.instance.onDebugMode && Input.GetKeyDown(KeyCode.Space) && MiniGameManager.instance.state == State.NONE)
         {
@@ -92,7 +97,8 @@ public class DialogueReader : MonoBehaviour
             }
             _dialogueIndex = id;
             _dialogueContext = context;
-            _dialogueText.text = dialogueDictionnary[dialogueKey].dialogue;
+            string goodDialogue = dialogueDictionnary[dialogueKey].dialogue.Replace('/', ',');
+            _dialogueText.text = goodDialogue;
             _nameText.text = dialogueDictionnary[dialogueKey].name;
             _dialoguePanel.SetActive(true);
             _characterTalkingPlace.gameObject.SetActive(true);
