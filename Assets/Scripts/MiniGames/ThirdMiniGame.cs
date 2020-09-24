@@ -47,7 +47,7 @@ public class ThirdMiniGame : MonoBehaviour
                 numberShapeInstantiated = 0;
                 shapeHolder = Instantiate(shapeHolderPrefab).transform;
                 shapeHolder.GetComponent<PathCreation.Examples.PathFollower>().pathCreator = MasterPath.instance.mainPath;
-                shapeHolder.GetComponent<PathCreation.Examples.PathFollower>().distanceTravelled = MasterPath.instance.playerPath.distanceTravelled + MasterPath.instance.playerPath.pathOffset;
+                shapeHolder.GetComponent<PathCreation.Examples.PathFollower>().distanceTravelled = MasterPath.instance.playerPathFollower.distanceTravelled + MasterPath.instance.playerPathFollower.pathOffset;
                 InstantiateShape();
             }
         };
