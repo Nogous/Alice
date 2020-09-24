@@ -58,4 +58,9 @@ public class TimerScore : MonoBehaviour
     {
         return _currentTimer;
     }
+
+    public void SetActive(bool isActive)
+    {
+        gameObject.SetActive(isActive);
+    }
 }
