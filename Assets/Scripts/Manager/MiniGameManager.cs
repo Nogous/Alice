@@ -33,5 +33,4 @@ public class MiniGameManager : MonoBehaviour
         state = newState;
         if (onChangeState != null) onChangeState.Invoke();
     }
-
 }

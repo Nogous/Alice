@@ -590,6 +590,7 @@ MonoBehaviour:
   _numberCollectibleTotal: 10
   _numberCollectibleToPass: 3
   collectiblesPickedUp: 0
+  bigHat: {fileID: 0}
 --- !u!1 &318585001
 GameObject:
   m_ObjectHideFlags: 0
@@ -756,7 +757,7 @@ PrefabInstance:
     - target: {fileID: 3926227613734970005, guid: a37a5d19952d43e4fb849974594f384a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 3926227613734970005, guid: a37a5d19952d43e4fb849974594f384a,
         type: 3}
@@ -866,6 +867,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ObjectSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 5570021722925774887, guid: 4e09777ce4044604986d2eadf98f4786,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e09777ce4044604986d2eadf98f4786, type: 3}
@@ -1226,7 +1232,7 @@ PrefabInstance:
     - target: {fileID: 3926227613734970005, guid: a37a5d19952d43e4fb849974594f384a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3926227613734970005, guid: a37a5d19952d43e4fb849974594f384a,
         type: 3}
@@ -1267,6 +1273,10 @@ PrefabInstance:
     - target: {fileID: 178229757, guid: 761d600d1e80341ac97f3228771ce637, type: 3}
       propertyPath: colisionRange
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 178229757, guid: 761d600d1e80341ac97f3228771ce637, type: 3}
+      propertyPath: inertieOff
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1576909240372392, guid: 761d600d1e80341ac97f3228771ce637, type: 3}
       propertyPath: m_Name
@@ -2025,54 +2035,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1215206532}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1259466937
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1259466939}
-  - component: {fileID: 1259466938}
-  m_Layer: 0
-  m_Name: Pushable Wall
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1259466938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1259466937}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33aabe1a2dec93349b06e6e5dc51bc06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pathCreator: {fileID: 1332622581}
-  endOfPathInstruction: 0
-  speed: 5
-  distanceTravelled: 0
-  pathOffset: 0
---- !u!4 &1259466939
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1259466937}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1332622581 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114462757500385858, guid: 2791553a612d84e7c9f3c0a95308376f,
@@ -2587,7 +2549,7 @@ PrefabInstance:
     - target: {fileID: 3926227613734970005, guid: a37a5d19952d43e4fb849974594f384a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3926227613734970005, guid: a37a5d19952d43e4fb849974594f384a,
         type: 3}
@@ -3217,6 +3179,7 @@ GameObject:
   m_Component:
   - component: {fileID: 855324690031516222}
   - component: {fileID: 855324690031516217}
+  - component: {fileID: 855324690031516218}
   m_Layer: 0
   m_Name: BigHat Fowlower (2)
   m_TagString: Untagged
@@ -3241,6 +3204,20 @@ MonoBehaviour:
   speed: 5
   distanceTravelled: 0
   pathOffset: 0
+--- !u!114 &855324690031516218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855324690031516216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21780086f28421042b7c0d2885be2ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathFollower: {fileID: 855324690031516217}
+  playerPathFollower: {fileID: 0}
 --- !u!4 &855324690031516222
 Transform:
   m_ObjectHideFlags: 0
@@ -3254,7 +3231,7 @@ Transform:
   m_Children:
   - {fileID: 54299540}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1166471846195670684
 PrefabInstance:
@@ -3537,7 +3514,7 @@ Transform:
   m_Children:
   - {fileID: 265359258}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3926227613265384660
 GameObject:
