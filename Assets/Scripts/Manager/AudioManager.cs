@@ -98,6 +98,7 @@ public class AudioManager : MonoBehaviour
             fxSource.volume = 0;
             StopCoroutine(FadeOutBeforeNewMusic(sourceToLower, music, index));
             Play(music, index, false);
+            
             StartCoroutine(FadeInNewMusic("Music"));
         }
         else
@@ -109,17 +110,16 @@ public class AudioManager : MonoBehaviour
     private IEnumerator FadeInNewMusic(string sourceToUp)
     {
         AudioSource fxSource = Array.Find(soundEffects, sound => sound.clipName == sourceToUp).source;
-        if (fxSource.volume + 0.2f <= 1)
-            fxSource.volume += 0.2f;
         yield return new WaitForSeconds(0.3f);
-        if (fxSource.volume >= 1)
+        if (fxSource.volume + 0.2f <= 1)
         {
-            fxSource.volume = 1;
-            StopCoroutine(FadeInNewMusic(sourceToUp));
+            fxSource.volume += 0.2f;
+            StartCoroutine(FadeInNewMusic(sourceToUp));
         }
         else
         {
-            StartCoroutine(FadeInNewMusic(sourceToUp));
+            fxSource.volume = 1;
+            StopCoroutine(FadeInNewMusic(sourceToUp));
         }
     }
 

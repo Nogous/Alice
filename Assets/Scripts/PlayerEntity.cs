@@ -75,6 +75,7 @@ public class PlayerEntity : MonoBehaviour
             TakeDamage(takeDamage);
 
             Destroy(collision.gameObject);
+            AudioManager.instance.Play("BodyImpact");
         }
     }
 

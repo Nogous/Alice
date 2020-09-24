@@ -56,6 +56,50 @@ MonoBehaviour:
     priority: 250
     loop: 1
     source: {fileID: 0}
+  - clipName: BodyImpact
+    clip:
+    - {fileID: 8300000, guid: dc68b4839d511fd409eb6b2dc96a3121, type: 3}
+    - {fileID: 8300000, guid: 34f871ac9fe64684bb7220b2dee06961, type: 3}
+    - {fileID: 8300000, guid: 572e248d930a2e748933bb67d63a3197, type: 3}
+    volume: 1
+    priority: 50
+    loop: 0
+    source: {fileID: 0}
+  - clipName: ForceField
+    clip:
+    - {fileID: 8300000, guid: 9729eb4be10b9fa4fa79d87a525c160b, type: 3}
+    - {fileID: 8300000, guid: 6dfaf4423621f624bbc2390c8b390eb8, type: 3}
+    volume: 1
+    priority: 50
+    loop: 0
+    source: {fileID: 0}
+  - clipName: Wind
+    clip:
+    - {fileID: 8300000, guid: 02fc47f8ad7cb934eb01ce1ee3d88cf5, type: 3}
+    - {fileID: 8300000, guid: d8c4bdb75b77ac04db25e521e87c2b8e, type: 3}
+    volume: 1
+    priority: 50
+    loop: 0
+    source: {fileID: 0}
+  - clipName: Wrong
+    clip:
+    - {fileID: 8300000, guid: 6a4ece440fb56184694a072e41aa2e06, type: 3}
+    - {fileID: 8300000, guid: 849fdd4b6edc56a41ac6eb75d90be71d, type: 3}
+    - {fileID: 8300000, guid: d97d44c87090d7a4981e70c299522cea, type: 3}
+    volume: 1
+    priority: 50
+    loop: 0
+    source: {fileID: 0}
+  - clipName: Correct
+    clip:
+    - {fileID: 8300000, guid: ea99d1cbada62074a8b53035bab08e31, type: 3}
+    - {fileID: 8300000, guid: 3c9856b4cfd887a4395b083a816ccb45, type: 3}
+    - {fileID: 8300000, guid: 9b42c863963429a42b975ff79e6bdcfd, type: 3}
+    - {fileID: 8300000, guid: 509b46ff3a06aae4e9326056061d62f7, type: 3}
+    volume: 1
+    priority: 50
+    loop: 0
+    source: {fileID: 0}
 --- !u!1 &3307554570349706083
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,8 +282,8 @@ MonoBehaviour:
   shapeHolderPrefab: {fileID: 7645589217035964731, guid: 544bc1f94fe18fd4c8e3d6fbdb45f4de,
     type: 3}
   numberOfShapeToInstantiate: 3
-  _previousTriggerId: 0
-  _firstTriggerId: 0
+  minBetweenShape: 1
+  maxBetweenShape: 4
 --- !u!1001 &3307554570760614552
 PrefabInstance:
   m_ObjectHideFlags: 0
