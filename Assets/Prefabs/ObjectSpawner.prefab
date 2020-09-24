@@ -70,8 +70,8 @@ MonoBehaviour:
   - TeaPot
   xOffset: 1
   yOffset: 1
-  xBigOffset: 3
-  yBigOffset: 3
+  xBigOffset: 1.75
+  yBigOffset: 1.75
   _numberOfObjectsOnBigArea: 2
   _numberOfObjectsOnLittleArea: 1
   obstacleSpawnPoint: {fileID: 0}

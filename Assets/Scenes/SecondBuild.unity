@@ -2048,16 +2048,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 2781175532223923807, guid: e82ac93fb9c83dc4a8a3e0342605bd36,
-        type: 3}
-      propertyPath: _collectibleOffsetX
-      value: 1.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 2781175532223923807, guid: e82ac93fb9c83dc4a8a3e0342605bd36,
-        type: 3}
-      propertyPath: _collectibleOffsetY
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3248145267091606443, guid: e82ac93fb9c83dc4a8a3e0342605bd36,
         type: 3}
       propertyPath: paths.Array.size
@@ -2203,6 +2193,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4370278639178328739, guid: e82ac93fb9c83dc4a8a3e0342605bd36,
+        type: 3}
+      propertyPath: _infoPanel
+      value: 
+      objectReference: {fileID: 1670731891}
     - target: {fileID: 6965514348251807171, guid: e82ac93fb9c83dc4a8a3e0342605bd36,
         type: 3}
       propertyPath: mainPath
@@ -2213,16 +2208,6 @@ PrefabInstance:
       propertyPath: obstacleSpawnPoint
       value: 
       objectReference: {fileID: 884465543}
-    - target: {fileID: 6965514348251807171, guid: e82ac93fb9c83dc4a8a3e0342605bd36,
-        type: 3}
-      propertyPath: xBigOffset
-      value: 1.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 6965514348251807171, guid: e82ac93fb9c83dc4a8a3e0342605bd36,
-        type: 3}
-      propertyPath: yBigOffset
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e82ac93fb9c83dc4a8a3e0342605bd36, type: 3}
 --- !u!4 &884465543 stripped
@@ -4053,6 +4038,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33aabe1a2dec93349b06e6e5dc51bc06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1670731891 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6456110522550942448, guid: 82f0997da501557458f1a3e1b0fff104,
+    type: 3}
+  m_PrefabInstance: {fileID: 1396489569}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1701992967
 PrefabInstance:
   m_ObjectHideFlags: 0
