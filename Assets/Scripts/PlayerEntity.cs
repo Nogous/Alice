@@ -181,6 +181,8 @@ public class PlayerEntity : MonoBehaviour
 
             Destroy(collision.gameObject);
             AudioManager.instance.Play("BodyImpact");
+
+            Life.instance.LooseLife();
         }
         PortalPathToPath tmpPath = collision.gameObject.GetComponent<PortalPathToPath>();
         if (tmpPath != null)
