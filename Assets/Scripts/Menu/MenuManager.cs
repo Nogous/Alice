@@ -17,7 +17,7 @@ public class MenuManager : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene("MatPathObstacle");
+        SceneManager.LoadScene("FirstBuildScene");
     }
 
     public void GoToBasePanel()

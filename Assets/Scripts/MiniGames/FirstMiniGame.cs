@@ -34,8 +34,7 @@ public class FirstMiniGame : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.M) && GameManager.instance.onDebugMode)
         {
-            miniGameManager.state = State.FIRSTMG;
-            if (miniGameManager.onChangeState != null) miniGameManager.onChangeState.Invoke();
+            miniGameManager.ChangeState(State.FIRSTMG);
         }
     }
 
@@ -58,13 +57,14 @@ public class FirstMiniGame : MonoBehaviour
         {
             //go to second minigame
             print("you passed");
-            miniGameManager.state = State.NONE;
-            if (miniGameManager.onChangeState != null) miniGameManager.onChangeState.Invoke();
+            //miniGameManager.ChangeState(State.NONE);
         }
         else
         {
             //gameover
             print("you lost");
         }
+        MiniGameManager.instance.ChangeState(State.NONE);
+        if (GameManager.instance.onPhaseChange != null) GameManager.instance.onPhaseChange.Invoke(4);
     }
 }
