@@ -25,6 +25,11 @@ public class Life : MonoBehaviour
 
     #endregion
 
+    public void SetLifeUI(bool isVisible)
+    {
+        gameObject.SetActive(isVisible);
+    }
+
     public void LooseLife()
     {
         GameObject life = transform.GetChild(indexLife).gameObject;
