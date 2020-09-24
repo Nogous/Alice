@@ -43,6 +43,7 @@ namespace PathCreation.Examples
 
         public void SetDistanceInPath(float _distanceTravelled)
         {
+            distanceTravelled = _distanceTravelled;
             transform.position = pathCreator.path.GetPointAtDistance(_distanceTravelled, endOfPathInstruction);
             transform.rotation = pathCreator.path.GetRotationAtDistance(_distanceTravelled, endOfPathInstruction);
         }
