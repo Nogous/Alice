@@ -652,7 +652,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1366807943}
+      - m_Target: {fileID: 433801710}
         m_MethodName: ChangeGameLanguage
         m_Mode: 0
         m_Arguments:

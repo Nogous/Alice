@@ -7,11 +7,11 @@ public class LanguageDropdown : MonoBehaviour
 {
 
     private Dropdown drop;
-    public static LanguageDropdown instance;
+    //public static LanguageDropdown instance;
 
     private void Awake()
     {
-        instance = this;
+        //instance = this;
     }
 
     // Start is called before the first frame update
@@ -22,9 +22,8 @@ public class LanguageDropdown : MonoBehaviour
         drop.value = ValueHolder.instance.gameLanguageId;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ChangeGameLanguage(int newOption)
     {
-        
+        ValueHolder.instance.ChangeGameLanguage(newOption);
     }
 }
