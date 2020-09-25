@@ -19,7 +19,7 @@ public class PlayerEntity : MonoBehaviour
     public float deceleration = 1f;
     [SerializeField] private float currentSpeed = 5f;
     public float looseSpeed = .5f;
-    private bool canSpeedUp = false;
+    public bool canSpeedUp = false;
     private float[] _musicPallier;
     private bool[] _musicPallierReached;
     public int previousPallier = 0;
