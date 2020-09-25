@@ -3482,6 +3482,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 855732547}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &855732549 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1576909240372392, guid: 761d600d1e80341ac97f3228771ce637,
+    type: 3}
+  m_PrefabInstance: {fileID: 855732547}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &884465542
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3664,6 +3670,11 @@ PrefabInstance:
       propertyPath: _infoPanel
       value: 
       objectReference: {fileID: 1670731891}
+    - target: {fileID: 6491477589158909778, guid: e82ac93fb9c83dc4a8a3e0342605bd36,
+        type: 3}
+      propertyPath: shapeHolderPrefab
+      value: 
+      objectReference: {fileID: 855732549}
     - target: {fileID: 6965514348251807171, guid: e82ac93fb9c83dc4a8a3e0342605bd36,
         type: 3}
       propertyPath: mainPath
@@ -5584,7 +5595,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 855732547}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 855732549}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33aabe1a2dec93349b06e6e5dc51bc06, type: 3}

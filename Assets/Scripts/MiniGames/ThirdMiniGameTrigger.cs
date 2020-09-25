@@ -29,6 +29,7 @@ public class ThirdMiniGameTrigger : MonoBehaviour
 
     public void ResetParticules()
     {
+        Debug.Log("mon problem a moi");
         particulesUnactive.SetActive(true);
         particulesActive.SetActive(false);
     }
