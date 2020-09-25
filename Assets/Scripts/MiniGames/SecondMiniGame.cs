@@ -6,8 +6,15 @@ public class SecondMiniGame : MonoBehaviour
 {
 
     private MiniGameManager miniGameManager;
+    public static SecondMiniGame instance;
 
-    [SerializeField] private GameObject _infoPanel;
+    [SerializeField] private SecondMiniGameInfo[] _gameStructure;
+    public bool ignoreThisMiniGame = false;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +28,17 @@ public class SecondMiniGame : MonoBehaviour
                 //StartCoroutine(StartSecondMinigame());
             }
         };
+
+        if (ignoreThisMiniGame)
+        {
+            for(int i = 0; i < _gameStructure.Length; i++)
+            {
+                foreach (GameObject structure in _gameStructure[i].obstacles)
+                {
+                    structure.SetActive(false);
+                }
+            }
+        }
     }
 
     // Update is called once per frame
@@ -29,19 +47,15 @@ public class SecondMiniGame : MonoBehaviour
         
     }
 
-    private IEnumerator StartSecondMinigame()
+    public void StopSecondMiniGame()
     {
-        yield return new WaitForSeconds(0.5f);
-        StartCoroutine(StartSecondMiniGame());
-    }
-
-    private IEnumerator StartSecondMiniGame()
-    {
-        _infoPanel.SetActive(true);
-        yield return new WaitForSeconds(5f);
-        _infoPanel.SetActive(false);
-        MiniGameManager.instance.ChangeState(State.NONE);
-        if (GameManager.instance.onPhaseChange != null) GameManager.instance.onPhaseChange.Invoke(6);
+        for (int i = 0; i < _gameStructure.Length; i++)
+        {
+            foreach (GameObject structure in _gameStructure[i].obstacles)
+            {
+                structure.SetActive(false);
+            }
+        }
     }
 
 }

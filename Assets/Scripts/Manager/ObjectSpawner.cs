@@ -10,7 +10,7 @@ public class ObjectSpawner : MonoBehaviour
     [Header("Parameters")]
     [SerializeField] private float minTimeBetweenObstacles = 0;
     [SerializeField] private float maxTimeBetweenObstacles = 1;
-    [SerializeField] private string[] obstacleTags;
+    public string[] obstacleTags;
     public float xOffset = 0.5f;
     public float yOffset = 0.5f;
     public float xBigOffset = 3;
@@ -56,6 +56,13 @@ public class ObjectSpawner : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.K) && GameManager.instance.onDebugMode)
         {
             StartCoroutine(SpawnObjects());
+        }
+        if(MiniGameManager.instance.state == State.NONE)
+        {
+            foreach (Transform child in objectPooler.transform)
+            {
+                child.gameObject.SetActive(false);
+            }
         }
     }
 
@@ -145,7 +152,7 @@ public class ObjectSpawner : MonoBehaviour
         Vector3 newRotation = new Vector3(Random.Range(-90, 90), Random.Range(-90, 90), Random.Range(-90, 90));
         obj.GetComponent<Obstacle>().SetChildOffset(newOffset);
         obj.GetComponent<Obstacle>().SetChildRotation(newRotation);
-        obj.GetComponent<PathCreation.Examples.PathFollower>().pathCreator = mainPath;
+        obj.GetComponent<PathCreation.Examples.PathFollower>().pathCreator = MasterPath.instance.mainPath;
         PathCreation.Examples.PathFollower spawnParentFollower = obstacleSpawnPoint.parent.GetComponent<PathCreation.Examples.PathFollower>();
         obj.GetComponent<PathCreation.Examples.PathFollower>().distanceTravelled = spawnParentFollower.distanceTravelled + spawnParentFollower.pathOffset;
     }

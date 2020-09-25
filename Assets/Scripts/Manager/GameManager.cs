@@ -10,8 +10,7 @@ public class GameManager : MonoBehaviour
     public bool onDebugMode;
 
     public System.Action<int> onPhaseChange;
-    [SerializeField] private GameObject _teleporter;
-    private GameObject _teleporterInScene;
+    public GameObject teleporterInScene;
 
     private void Awake()
     {
@@ -43,10 +42,11 @@ public class GameManager : MonoBehaviour
                     MiniGameManager.instance.ChangeState(State.SECONDMG);
                     break;
                 case 6:
+                    print("last dialogue");
                     DialogueReader.instance.CheckDialogue("UICAT3", 1);
                     break;
                 case 7:
-                    MiniGameManager.instance.ChangeState(State.THIRDMG);
+                    MiniGameManager.instance.ChangeState(State.TRANSITION);
                     break;
                 case 8:
                     DialogueReader.instance.CheckDialogue("FMG", 1);
@@ -56,24 +56,12 @@ public class GameManager : MonoBehaviour
 
         MiniGameManager.instance.onChangeState += () =>
         {
-            if(MiniGameManager.instance.state == State.NONE)
+            if(MiniGameManager.instance.state != State.NONE)
             {
-                _teleporterInScene = Instantiate(_teleporter, PlayerEntity.instance.transform.position + new Vector3(0, 0, 3), Quaternion.identity);
-            }
-            else
-            {
-                Destroy(_teleporterInScene);
+                Destroy(teleporterInScene);
             }
         };
 
-        StartCoroutine(WaitAndInstantiateTeleporter());
-
-    }
-
-    private IEnumerator WaitAndInstantiateTeleporter()
-    {
-        yield return new WaitForSeconds(0.3f);
-        _teleporterInScene = Instantiate(_teleporter, PlayerEntity.instance.transform.position + new Vector3(0, 0, 3), Quaternion.identity);
     }
 
     // Update is called once per frame

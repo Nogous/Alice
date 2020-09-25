@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 8952084401966561531}
   - component: {fileID: 4494098073830310173}
   - component: {fileID: 8502216480772889520}
+  - component: {fileID: -7608629708886867952}
   m_Layer: 0
   m_Name: Card_Single
   m_TagString: Obstacle
@@ -95,6 +96,8 @@ MonoBehaviour:
   speed: -1
   distanceTravelled: 0
   pathOffset: 0
+  _followPathRotation: 1
+  _isPlayer: 0
 --- !u!114 &8502216480772889520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,6 +111,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   child: {fileID: 1967823562562498000}
+--- !u!54 &-7608629708886867952
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3144746818306813080}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &2953942381290752295
 PrefabInstance:
   m_ObjectHideFlags: 0

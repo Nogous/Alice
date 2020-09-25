@@ -17,8 +17,10 @@ public class PortalPathToPath : MonoBehaviour
             switch (miniGameToStart)
             {
                 case 2:
-                    print("miaou");
                     MiniGameManager.instance.ChangeState(State.FIRSTMG);
+                    break;
+                case 3:
+                    MiniGameManager.instance.ChangeState(State.THIRDMG);
                     break;
             }
             gameObject.SetActive(false);

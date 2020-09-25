@@ -39,11 +39,6 @@ public class DialogueReader : MonoBehaviour
         for (int i = 1; i < data.Length; i++)
         {
             string[] row = data[i].Split(new char[] { ',' });
-            for(int j = 0; j < row.Length; j++)
-            {
-                print("index   row[" + j);
-                print(row[j]);
-            }
             Dialogue dial = new Dialogue();
             dial.key = row[0];
             int.TryParse(row[0], out dial.id);

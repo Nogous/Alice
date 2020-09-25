@@ -10,11 +10,11 @@ public class FirstMiniGame : MonoBehaviour
 
     [SerializeField] private float minBetweenCollectible = 2;
     [SerializeField] private float maxBetweenCollectible = 4;
-    [SerializeField] private int numberCollectibleTotal = 10;
-    [SerializeField] private int numberCollectibleToPass = 3;
     [SerializeField] private string[] collectibleTags;
     [SerializeField] private float _collectibleOffsetX;
     [SerializeField] private float _collectibleOffsetY;
+
+    public bool ignoreThisMiniGame = false;
 
     private void Awake()
     {
@@ -54,26 +54,55 @@ public class FirstMiniGame : MonoBehaviour
 
     private IEnumerator FirstMinigame()
     {
-        ObjectSpawner.instance.InstantiateObject(collectibleTags, _collectibleOffsetX, _collectibleOffsetY);
-        yield return new WaitForSeconds(Random.Range(minBetweenCollectible, maxBetweenCollectible));
-        _currentCollectibleInstantiated += 1;
-        if (_currentCollectibleInstantiated < numberCollectibleTotal)
+        int rand = Random.Range(0, 2);
+        float globalTime = 0;
+        if(rand == 0)
+        {
+            ObjectSpawner.instance.InstantiateObject(collectibleTags, _collectibleOffsetX, _collectibleOffsetY);
+            _currentCollectibleInstantiated += 1;
+
+            float randTime = Random.Range(0.5f, 1f);
+            globalTime += randTime;
+            yield return new WaitForSeconds(randTime);
+            ObjectSpawner.instance.InstantiateObject(ObjectSpawner.instance.obstacleTags[Random.Range(0, ObjectSpawner.instance.obstacleTags.Length)], _collectibleOffsetX, _collectibleOffsetY);
+
+            randTime = Random.Range(0.5f, 1f);
+            globalTime += randTime;
+            yield return new WaitForSeconds(randTime);
+            ObjectSpawner.instance.InstantiateObject(collectibleTags, _collectibleOffsetX, _collectibleOffsetY);
+            _currentCollectibleInstantiated += 1;
+
+        }
+        else
+        {
+            ObjectSpawner.instance.InstantiateObject(ObjectSpawner.instance.obstacleTags[Random.Range(0, ObjectSpawner.instance.obstacleTags.Length)], _collectibleOffsetX, _collectibleOffsetY);
+
+            float randTime = Random.Range(0.5f, 1f);
+            globalTime += randTime;
+            yield return new WaitForSeconds(Random.Range(0.5f, 1f));
+            ObjectSpawner.instance.InstantiateObject(collectibleTags, _collectibleOffsetX, _collectibleOffsetY);
+            _currentCollectibleInstantiated += 1;
+
+            randTime = Random.Range(0.5f, 1f);
+            globalTime += randTime;
+            yield return new WaitForSeconds(Random.Range(0.5f, 2f));
+            ObjectSpawner.instance.InstantiateObject(ObjectSpawner.instance.obstacleTags[Random.Range(0, ObjectSpawner.instance.obstacleTags.Length)], _collectibleOffsetX, _collectibleOffsetY);
+        }
+        yield return new WaitForSeconds(Random.Range(minBetweenCollectible, maxBetweenCollectible) - globalTime);
+        if (miniGameManager.state == State.FIRSTMG)
             StartCoroutine(FirstMinigame());
-        //else
-        //{
-        //    StartCoroutine(WaitAndEndFirstMiniGame());
-        //}
     }
 
     public void StopMiniGame()
     {
+        print("miaou");
         StopAllCoroutines();
         CheckIfMiniGamePassed();
     }
 
     private void CheckIfMiniGamePassed()
     {
-        if (miniGameManager.collectiblesPickedUp >= numberCollectibleToPass)
+        if (miniGameManager.collectiblesPickedUp >= (_currentCollectibleInstantiated/2) || ignoreThisMiniGame)
         {
             MiniGameManager.instance.ChangeState(State.NONE);
             if (GameManager.instance.onPhaseChange != null) GameManager.instance.onPhaseChange.Invoke(4);

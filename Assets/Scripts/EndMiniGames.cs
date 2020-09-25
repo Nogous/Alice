@@ -28,6 +28,7 @@ public class EndMiniGames : MonoBehaviour
                 case 3:
                     if (MiniGameManager.instance.state == State.SECONDMG)
                     {
+                        SecondMiniGame.instance.StopSecondMiniGame();
                         MiniGameManager.instance.ChangeState(State.NONE);
                         if (GameManager.instance.onPhaseChange != null) GameManager.instance.onPhaseChange.Invoke(6);
                     }

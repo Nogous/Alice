@@ -105,9 +105,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathCreator: {fileID: 0}
   endOfPathInstruction: 0
-  speed: -8
+  speed: -3
   distanceTravelled: 0
   pathOffset: 0
+  _followPathRotation: 1
+  _isPlayer: 0
 --- !u!114 &6996756252591501412
 MonoBehaviour:
   m_ObjectHideFlags: 0
