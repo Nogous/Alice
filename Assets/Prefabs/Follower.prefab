@@ -639,7 +639,8 @@ MonoBehaviour:
   speed: 5
   distanceTravelled: 0
   pathOffset: 0
-  _followPathRotation: 1
+  _followPathRotation: 0
+  _isPlayer: 1
 --- !u!114 &2256342854908667797
 MonoBehaviour:
   m_ObjectHideFlags: 0

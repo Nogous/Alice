@@ -2183,7 +2183,7 @@ PrefabInstance:
     - target: {fileID: 114462757500385858, guid: 2791553a612d84e7c9f3c0a95308376f,
         type: 3}
       propertyPath: editorData._bezierPath.points.Array.data[0].z
-      value: -14.338318
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 114462757500385858, guid: 2791553a612d84e7c9f3c0a95308376f,
         type: 3}
@@ -2198,7 +2198,7 @@ PrefabInstance:
     - target: {fileID: 114462757500385858, guid: 2791553a612d84e7c9f3c0a95308376f,
         type: 3}
       propertyPath: editorData._bezierPath.points.Array.data[1].z
-      value: -11.76001
+      value: -7.421692
       objectReference: {fileID: 0}
     - target: {fileID: 114462757500385858, guid: 2791553a612d84e7c9f3c0a95308376f,
         type: 3}
@@ -3423,21 +3423,6 @@ PrefabInstance:
         type: 3}
       propertyPath: endOfPathInstruction
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114548013775708692, guid: 761d600d1e80341ac97f3228771ce637,
-        type: 3}
-      propertyPath: speed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 114548013775708692, guid: 761d600d1e80341ac97f3228771ce637,
-        type: 3}
-      propertyPath: _followPathRotation
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114548013775708692, guid: 761d600d1e80341ac97f3228771ce637,
-        type: 3}
-      propertyPath: _isPlayer
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2167586654023790542, guid: 761d600d1e80341ac97f3228771ce637,
         type: 3}
