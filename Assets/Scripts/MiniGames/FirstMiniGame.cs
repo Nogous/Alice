@@ -25,9 +25,9 @@ public class FirstMiniGame : MonoBehaviour
         {
             if (miniGameManager.state == State.FIRSTMG)
             {
-                _currentCollectibleInstantiated = 0;
-                miniGameManager.collectiblesPickedUp = 0;
-                StartCoroutine(StartFirstMinigame());
+                //_currentCollectibleInstantiated = 0;
+                //miniGameManager.collectiblesPickedUp = 0;
+                //StartCoroutine(StartFirstMinigame());
             }
         };
     }

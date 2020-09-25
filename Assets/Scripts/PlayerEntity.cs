@@ -180,7 +180,7 @@ public class PlayerEntity : MonoBehaviour
         if (collision.gameObject.tag == "Obstacle")
         {
             SpeedDown(looseSpeed);
-            TakeDamage(takeDamage);
+            //TakeDamage(takeDamage);
 
             if (currentSpeed > moveSpeedMin && !canSpeedUp)
             {

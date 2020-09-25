@@ -45,7 +45,6 @@ public class ObjectSpawner : MonoBehaviour
             if (MiniGameManager.instance.state == State.TUTO)
             {
                 StartCoroutine(WaitAndSpawnObjects());
-                StartCoroutine(WaitAndEndTuto());
             }
         };
     
@@ -60,11 +59,10 @@ public class ObjectSpawner : MonoBehaviour
         }
     }
 
-    IEnumerator WaitAndEndTuto()
+    public IEnumerator WaitAndEndTuto()
     {
-        yield return new WaitForSeconds(15);
         shouldSpawnObjects = false;
-        yield return new WaitForSeconds(6);
+        yield return new WaitForSeconds(1f);
         foreach (Transform child in objectPooler.transform)
         {
             child.gameObject.SetActive(false);

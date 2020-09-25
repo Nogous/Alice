@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
         {
             if(MiniGameManager.instance.state == State.NONE)
             {
-                _teleporterInScene = Instantiate(_teleporter, PlayerEntity.instance.transform.position + new Vector3(0, 0, 10), Quaternion.identity);
+                _teleporterInScene = Instantiate(_teleporter, PlayerEntity.instance.transform.position + new Vector3(0, 0, 5), Quaternion.identity);
             }
             else
             {
@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator WaitAndInstantiateTeleporter()
     {
         yield return new WaitForSeconds(0.3f);
-        _teleporterInScene = Instantiate(_teleporter, PlayerEntity.instance.transform.position + new Vector3(0, 0, 10), Quaternion.identity);
+        _teleporterInScene = Instantiate(_teleporter, PlayerEntity.instance.transform.position + new Vector3(0, 0, 5), Quaternion.identity);
     }
 
     // Update is called once per frame
