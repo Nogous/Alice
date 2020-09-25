@@ -382,6 +382,7 @@ MonoBehaviour:
   moveSpeedMax: 10
   moveSpeedMin: 1
   acceleration: 0.2
+  deceleration: 1
   currentSpeed: 2
   looseSpeed: 0.5
   previousPallier: 0
@@ -530,6 +531,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4125965570099986}
   - component: {fileID: 114548013775708692}
+  - component: {fileID: 2256342854908667797}
   m_Layer: 0
   m_Name: Follower
   m_TagString: Untagged
@@ -575,6 +577,20 @@ MonoBehaviour:
   speed: 5
   distanceTravelled: 0
   pathOffset: 0
+  _followPathRotation: 1
+--- !u!114 &2256342854908667797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576909240372392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a67ef89d5bf8a4388ceb15bba87ecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 10
 --- !u!95 &642777862
 Animator:
   serializedVersion: 3

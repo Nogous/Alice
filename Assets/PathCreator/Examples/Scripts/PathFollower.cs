@@ -11,6 +11,7 @@ namespace PathCreation.Examples
         public float speed = 5;
         public float distanceTravelled;
         public float pathOffset;
+        [SerializeField] private bool _followPathRotation = true;
 
         void Start() {
             if (pathCreator != null)
@@ -26,7 +27,8 @@ namespace PathCreation.Examples
             {
                 distanceTravelled += speed * Time.deltaTime;
                 transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled + pathOffset, endOfPathInstruction);
-                transform.rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled + pathOffset, endOfPathInstruction);
+                if(_followPathRotation)
+                    transform.rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled + pathOffset, endOfPathInstruction);
             }
         }
 
@@ -45,7 +47,8 @@ namespace PathCreation.Examples
         {
             distanceTravelled = _distanceTravelled;
             transform.position = pathCreator.path.GetPointAtDistance(_distanceTravelled, endOfPathInstruction);
-            transform.rotation = pathCreator.path.GetRotationAtDistance(_distanceTravelled, endOfPathInstruction);
+            if (_followPathRotation)
+                transform.rotation = pathCreator.path.GetRotationAtDistance(_distanceTravelled, endOfPathInstruction);
         }
 
         public void SetPathOffset(float offset)
