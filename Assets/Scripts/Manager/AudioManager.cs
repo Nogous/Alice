@@ -15,6 +15,8 @@ public class AudioManager : MonoBehaviour
     public bool FadeInOver = false;
     public bool canPlayMusic = false;
 
+    public System.Action<int> onMusicPallierChanged;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -35,13 +37,11 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        if (MiniGameManager.instance != null)
         MiniGameManager.instance.onChangeState += () =>
         {
-            if ((MiniGameManager.instance.state == State.NONE || MiniGameManager.instance.state == State.TUTO))
+            if (MiniGameManager.instance.state == State.NONE)
             {
-                if ((MiniGameManager.instance.previousState != State.NONE && MiniGameManager.instance.previousState != State.TUTO))
-                    StartCoroutine(FadeOutBeforeNewMusic("Music", "Music", 0));
+                StartCoroutine(FadeOutBeforeNewMusic("Music", "Music", 0));
             }
             else if(MiniGameManager.instance.state == State.DEAD)
             {
@@ -49,10 +49,17 @@ public class AudioManager : MonoBehaviour
             }
             else
             {
-                if (MiniGameManager.instance.previousState == State.NONE || MiniGameManager.instance.previousState == State.TUTO)
+                if (MiniGameManager.instance.previousState == State.NONE)
                     StartCoroutine(FadeOutBeforeNewMusic("Music", "Music", PlayerEntity.instance.previousPallier));
             }
         };
+
+        onMusicPallierChanged += (int index) =>
+        {
+            print("change  " + index);
+            Play("Music", index, true);
+        };
+
         Play("Music", 0, false);
     }
 

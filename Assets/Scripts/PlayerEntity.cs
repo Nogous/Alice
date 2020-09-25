@@ -65,7 +65,7 @@ public class PlayerEntity : MonoBehaviour
         currentSpeed = initMoveSpeed;
         offsetCamToAlice = cam.transform.localPosition.z;
 
-        previousPallier = 0;
+        previousPallier = 1;
         _musicPallier = new float[5];
         _musicPallierReached = new bool[5];
         for(int i = 0; i < _musicPallier.Length; i++)
@@ -73,6 +73,7 @@ public class PlayerEntity : MonoBehaviour
             _musicPallier[i] = (i) * (moveSpeedMax / 5);
             _musicPallierReached[i] = false;
         }
+        _musicPallierReached[0] = true;
 
         MiniGameManager.instance.onChangeState += () =>
         {
@@ -107,8 +108,14 @@ public class PlayerEntity : MonoBehaviour
                 if (!_musicPallierReached[previousPallier] && currentSpeed > _musicPallier[previousPallier])
                 {
                     _musicPallierReached[previousPallier] = true;
-                    if(previousPallier + 1 < _musicPallier.Length)
+                    if (previousPallier + 1 < _musicPallier.Length)
+                    {
                         previousPallier += 1;
+                        if (MiniGameManager.instance.state != State.NONE)
+                        {
+                            if (AudioManager.instance.onMusicPallierChanged != null) AudioManager.instance.onMusicPallierChanged.Invoke(previousPallier);
+                        }
+                    }
                 }
             }
         }
@@ -116,13 +123,19 @@ public class PlayerEntity : MonoBehaviour
         if (currentSpeed > moveSpeedMin && !canSpeedUp)
         {
             currentSpeed -= deceleration * Time.fixedDeltaTime;
-            if (previousPallier >= 0)
+            if (previousPallier >= 1)
             {
-                if (_musicPallierReached[previousPallier] && currentSpeed > _musicPallier[previousPallier])
+                if (currentSpeed > _musicPallier[previousPallier -1])
                 {
-                    _musicPallierReached[previousPallier] = false;
-                    if(previousPallier - 1 >= 0)
+                    _musicPallierReached[previousPallier - 1] = false;
+                    if (previousPallier - 1 >= 1)
+                    {
                         previousPallier -= 1;
+                        if (MiniGameManager.instance.state != State.NONE)
+                        {
+                            if (AudioManager.instance.onMusicPallierChanged != null) AudioManager.instance.onMusicPallierChanged.Invoke(previousPallier);
+                        }
+                    }
                 }
             }
         }
@@ -158,16 +171,6 @@ public class PlayerEntity : MonoBehaviour
         {
             transform.localPosition = transform.localPosition.normalized * colisionRange;
         }
-
-
-        if (MiniGameManager.instance.state != State.NONE && MiniGameManager.instance.state != State.TUTO)
-        {
-            if (!AudioManager.instance.CheckAudioClip(previousPallier) && AudioManager.instance.canPlayMusic)
-            {
-                AudioManager.instance.Play("Music", previousPallier, true);
-            }
-        }
-
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -178,6 +181,26 @@ public class PlayerEntity : MonoBehaviour
         {
             SpeedDown(looseSpeed);
             TakeDamage(takeDamage);
+
+            if (currentSpeed > moveSpeedMin && !canSpeedUp)
+            {
+                currentSpeed -= deceleration * Time.fixedDeltaTime;
+                if (previousPallier >= 1)
+                {
+                    if (currentSpeed > _musicPallier[previousPallier - 1])
+                    {
+                        _musicPallierReached[previousPallier - 1] = false;
+                        if (previousPallier - 1 >= 1)
+                        {
+                            previousPallier -= 1;
+                            if (MiniGameManager.instance.state != State.NONE)
+                            {
+                                if (AudioManager.instance.onMusicPallierChanged != null) AudioManager.instance.onMusicPallierChanged.Invoke(previousPallier);
+                            }
+                        }
+                    }
+                }
+            }
 
             Destroy(collision.gameObject);
             AudioManager.instance.Play("BodyImpact");

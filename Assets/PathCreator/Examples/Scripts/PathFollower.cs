@@ -57,6 +57,12 @@ namespace PathCreation.Examples
             StartCoroutine(WaitAndCanRotate());
         }
 
+        public void SetDistanceInPath(float _distanceTravelled, bool isTeleporter)
+        {
+            distanceTravelled = _distanceTravelled;
+            transform.position = pathCreator.path.GetPointAtDistance(_distanceTravelled, endOfPathInstruction);
+        }
+
         private IEnumerator WaitAndCanRotate()
         {
             yield return new WaitForSeconds(0.3f);
