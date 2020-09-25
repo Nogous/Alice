@@ -217,6 +217,14 @@ public class PlayerEntity : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Finish")
+        {
+            InterfaceManager.instance.Win();
+        }
+    }
+
     #endregion
 
     #region Damage

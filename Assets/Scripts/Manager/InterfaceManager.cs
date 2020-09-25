@@ -11,6 +11,7 @@ public class InterfaceManager : MonoBehaviour
     [SerializeField] private GameObject gamePanel;
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private GameObject winPanel;
 
     public bool isInPause = false;
 
@@ -25,6 +26,8 @@ public class InterfaceManager : MonoBehaviour
     {
         gamePanel.SetActive(true);
         pausePanel.SetActive(false);
+        gameOverPanel.SetActive(false);
+        winPanel.SetActive(false);
 
         MiniGameManager.instance.onChangeState += () =>
         {
@@ -81,5 +84,16 @@ public class InterfaceManager : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("Menu");
+    }
+
+    public void Win()
+    {
+        Time.timeScale = 0;
+        TimerScore.instance.StopTimer();
+        Life.instance.SetLifeUI(false);
+        gameOverPanel.SetActive(false);
+        gamePanel.SetActive(false);
+        pausePanel.SetActive(false);
+        winPanel.SetActive(true);
     }
 }
