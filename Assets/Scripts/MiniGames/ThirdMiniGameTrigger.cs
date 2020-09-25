@@ -14,7 +14,9 @@ public class ThirdMiniGameTrigger : MonoBehaviour
     {
         id = transform.GetSiblingIndex() - 1;
         particulesUnactive.SetActive(true);
+        particulesUnactive.transform.localPosition = Vector3.zero;
         particulesActive.SetActive(false);
+        particulesActive.transform.localPosition = Vector3.zero;
     }
 
     private void OnTriggerEnter(Collider other)
