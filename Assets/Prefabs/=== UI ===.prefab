@@ -1938,7 +1938,7 @@ MonoBehaviour:
   gamePanel: {fileID: 4625752690471281701}
   pausePanel: {fileID: 4625752690167964941}
   gameOverPanel: {fileID: 4201385331303600856}
-  winPanel: {fileID: 0}
+  winPanel: {fileID: 3947197838880106186}
   isInPause: 0
 --- !u!1 &4625752690554477482
 GameObject:
