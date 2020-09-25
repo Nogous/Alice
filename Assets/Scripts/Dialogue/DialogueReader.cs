@@ -39,11 +39,16 @@ public class DialogueReader : MonoBehaviour
         for (int i = 1; i < data.Length; i++)
         {
             string[] row = data[i].Split(new char[] { ',' });
+            for(int j = 0; j < row.Length; j++)
+            {
+                print("index   row[" + j);
+                print(row[j]);
+            }
             Dialogue dial = new Dialogue();
             dial.key = row[0];
             int.TryParse(row[0], out dial.id);
-            dial.name = row[1];
-            dial.dialogue = row[2];
+            dial.name = row[2];
+            dial.dialogue = row[1];
             int.TryParse(row[3], out dial.characterModel);
 
             allDialogues.Add(dial);
@@ -52,7 +57,6 @@ public class DialogueReader : MonoBehaviour
 
         if (ValueHolder.instance)
             _language = ValueHolder.instance.gameLanguage;
-
 
 
     }
@@ -77,6 +81,7 @@ public class DialogueReader : MonoBehaviour
 
         if(!GameManager.instance.onDebugMode && Input.GetKeyDown(KeyCode.Space) && MiniGameManager.instance.state == State.NONE)
         {
+            print("lnkjfwd,;s");
             CheckDialogue(_dialogueContext, _dialogueIndex);
         }
     }

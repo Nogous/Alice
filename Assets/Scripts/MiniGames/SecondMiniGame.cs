@@ -18,7 +18,7 @@ public class SecondMiniGame : MonoBehaviour
         {
             if (miniGameManager.state == State.SECONDMG)
             {
-                StartCoroutine(StartSecondMinigame());
+                //StartCoroutine(StartSecondMinigame());
             }
         };
     }

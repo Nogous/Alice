@@ -80,44 +80,48 @@ public class ObjectSpawner : MonoBehaviour
 
     private IEnumerator SpawnObjects()
     {
-        for (int i = 0; i <= _numberOfObjectsOnBigArea; i++)
+        if (shouldSpawnObjects)
         {
-            InstantiateObject(obstacleTags, xBigOffset, yBigOffset);
-        }
-        //
-        for (int i = 0; i <= _numberOfObjectsOnLittleArea; i++)
-        {
+            for (int i = 0; i <= _numberOfObjectsOnBigArea; i++)
+            {
+                InstantiateObject(obstacleTags, xBigOffset, yBigOffset);
+            }
+            //
+            for (int i = 0; i <= _numberOfObjectsOnLittleArea; i++)
+            {
+                InstantiateObject(obstacleTags, xOffset, yOffset);
+            }
+            float globalTime = 0;
+            float time = Random.Range(minTimeBetweenObstacles / 4, minTimeBetweenObstacles / 2);
+            yield return new WaitForSeconds(time);
+            for (int i = 0; i <= _numberOfObjectsOnBigArea; i++)
+            {
+                InstantiateObject(obstacleTags, xBigOffset, yBigOffset);
+            }
+            //
+            for (int i = 0; i <= _numberOfObjectsOnLittleArea; i++)
+            {
+                InstantiateObject(obstacleTags, xOffset, yOffset);
+            }
+            float secondTime = Random.Range(minTimeBetweenObstacles / 4, minTimeBetweenObstacles / 2);
+            globalTime = time + secondTime;
+            yield return new WaitForSeconds(secondTime);
+            for (int i = 0; i <= _numberOfObjectsOnBigArea; i++)
+            {
+                InstantiateObject(obstacleTags, xBigOffset, yBigOffset);
+            }
+            //
+            for (int i = 0; i <= _numberOfObjectsOnLittleArea; i++)
+            {
+                InstantiateObject(obstacleTags, xOffset, yOffset);
+            }
+            //
             InstantiateObject(obstacleTags, xOffset, yOffset);
+            yield return new WaitForSeconds(Random.Range(minTimeBetweenObstacles, maxTimeBetweenObstacles) - globalTime);
+            if (shouldSpawnObjects)
+                StartCoroutine(SpawnObjects());
         }
-        float globalTime = 0;
-        float time = Random.Range(minTimeBetweenObstacles / 4, minTimeBetweenObstacles / 2);
-        yield return new WaitForSeconds(time);
-        for (int i = 0; i <= _numberOfObjectsOnBigArea; i++)
-        {
-            InstantiateObject(obstacleTags, xBigOffset, yBigOffset);
-        }
-        //
-        for (int i = 0; i <= _numberOfObjectsOnLittleArea; i++)
-        {
-            InstantiateObject(obstacleTags, xOffset, yOffset);
-        }
-        float secondTime = Random.Range(minTimeBetweenObstacles / 4, minTimeBetweenObstacles/2);
-        globalTime = time + secondTime;
-        yield return new WaitForSeconds(secondTime);
-        for (int i = 0; i <= _numberOfObjectsOnBigArea; i++)
-        {
-            InstantiateObject(obstacleTags, xBigOffset, yBigOffset);
-        }
-        //
-        for (int i = 0; i <= _numberOfObjectsOnLittleArea; i++)
-        {
-            InstantiateObject(obstacleTags, xOffset, yOffset);
-        }
-        //
-        InstantiateObject(obstacleTags, xOffset, yOffset);
-        yield return new WaitForSeconds(Random.Range(minTimeBetweenObstacles, maxTimeBetweenObstacles) - globalTime);
-        if(shouldSpawnObjects)
-            StartCoroutine(SpawnObjects());
+        
     }
 
     public void InstantiateObject(string [] objectTags, float offsetX, float offsetY)

@@ -150,9 +150,9 @@ MonoBehaviour:
   _nameText: {fileID: 0}
   _characterTalking:
   - {fileID: 919132149155446097, guid: bdf6d38efe01eff418239dff2caa739e, type: 3}
-  - {fileID: 919132149155446097, guid: 3184f1bf145cde34399130688d2bcf30, type: 3}
+  - {fileID: 8002727073750928014, guid: cce042d3046e2a245ae5174708e99e07, type: 3}
   _characterTalkingPlace: {fileID: 0}
-  _language: ENG
+  _language: EN
 --- !u!1 &3307554571104510782
 GameObject:
   m_ObjectHideFlags: 0

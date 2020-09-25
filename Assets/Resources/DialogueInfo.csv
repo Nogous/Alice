@@ -1,35 +1,101 @@
-id,name,descr,int character
-ENG_BLA_01,Flat Hat,Hello/ there! (Press Space to continue the dialogue)/,0
-ENG_BLA_02,Flat Hat,This game is still only a demo.,0
-ENG_BLA_03,Flat Hat,Please forgive any bugs you might encounter  but do report them if you can.,0
-ENG_BLA_04,Flat Hat,To play  use the keyboards arrows or ZQSD to move Alice,0
-ENG_BLA_05,Flat Hat,Try to avoid the obstacles coming at you.,0
-ENG_BLA_06,,I'll let you play now   good luck with the fall!,0
-ENG_BLA_07,,endphase_1,
-ENG_FMG_01,Flat Hat,Nice going !,0
-ENG_FMG_02,Flat Hat,Now for somehting a tad more difficult.,0
-ENG_FMG_03,Flat Hat,Try to catch those capsule looking things okay ?,0
-ENG_FMG_04,,endphase_3,
-ENG_SMG_01,Flat Hat,So are you getting the hang of it ?,0
-ENG_SMG_02,Flat Hat,try this one next.,0
-ENG_SMG_03,Flat Hat,Follow the shape good luck,0
-ENG_SMG_04,,endphase_5,
-FR_BLA_01,Chapeau Tuto,Bonjour ! (appuie sur espace pour continuer le dialogue),0
-FR_BLA_02,Chapeau Tuto,Ce jeu est encore une démo.,0
-FR_BLA_03,Chapeau Tuto,Il y aura donc quelques bug. N'hésite pas à les communiquer à l'équipe !,0
-FR_BLA_04,Chapeau Tuto,Utilise les flèches ou WASD pour déplacer Alice,0
-FR_BLA_05,Chapeau Tuto,Essaye d'éviter les obstacles.,0
-FR_BLA_06,Chapeau Tuto,Courage!,0
-FR_BLA_07,,endphase_1,
-FR_FMG_01,Chapeau Tuto,Bravo !,0
-FR_FMG_02,Chapeau Tuto,Essayons quelque chose de plus compliqué!,0
-FR_FMG_03,Chapeau Tuto,Essaye d'attraper ces petites capsules,0
-FR_FMG_04,,endphase_3,
-FR_SMG_01,Chapeau Tuto,Tu te débrouille bien !,0
-FR_SMG_02,Chapeau Tuto,Continuons !,0
-FR_SMG_03,Chapeau Tuto,Trace les formes,0
-FR_SMG_04,,endphase_5,
-ENG_TMG_01,Flat Hat,Miaou,0
-ENG_TMG_02,Flat Hat,Je suis pas le chat ptdr lol,0
-ENG_TMG_03,Flat Hat,jbhbeqnjknjklzrelnkj,0
-ENG_TMG_04,,endphase_7,
+Loca key,Dialog,Name,ID PERSO
+EN_UITUTO_01,Hello/ my dear Alice/ and welcome to the Hole,Cheshire Cat,1
+EN_UITUTO_02,"But beware the fall/ you’re in a precipice.",Cheshire Cat,1
+EN_UITUTO_03,"Use the mouse to look around/ ZSQD to move.",Cheshire Cat,1
+EN_UITUTO_04,"If you want to one day touch the ground/ those are the skills you need to improve",Cheshire Cat,1
+EN_UITUTO_05,"The Hole is quite a mess/ and you just have a skirt/",Cheshire Cat,1
+EN_UITUTO_06,"what the rabbit possess might get you a bit hurt.",Cheshire Cat,1
+EN_UITUTO_07,endphase_1,,
+EN_UIRABE1_01,I'm late! I'm late! I'm late! For a very important date!,Rabbit,2
+EN_UIRABE1_02,Wait a second/ what are you looking for in there ?,Rabbit,2
+EN_UIRABE1_03,No time to say hello/ goodbye/ you are here to drink a cup tea/ right ?,Rabbit,2
+EN_UIRABE1_04,Quick/ quick/ go down before the tea gets cold,Rabbit,2
+EN_UIRABE1_05,end,,
+EN_UIRABE2_01,Faster! Faster! Faster! I need to go down/ she is waiting for me!,Rabbit,2
+EN_UIRABE2_02,Are you late? I am!,Rabbit,2
+EN_UIRABE2_03,Careful! This is my place/ dont touch my belongings! ,Rabbit,2
+EN_UIRABE2_04,Did we meet before? I'm late! Weren't you alreary down here yesterday?,Rabbit,2
+EN_UIRABE2_05,end,,
+EN_UICARD_01,Where am I?,Card,3
+EN_UICARD_02,You are lost too I guess.,Card,3
+EN_UICARD_03,It would be my pleasure to help you but I'm so confused.,Card,3
+EN_UICARD_04,Why don't you try to keep falling to try and understand this?,Card,3
+EN_UICARD_05,If you come back here please explain to me this mess.,Card,3
+EN_UICARD_06,end,,
+EN_UILOIR_01,Welcome to this place/ I hope you are not too confused.,Dormouse,4
+EN_UILOIR_02,You know/ everyone here lives with their own mindset and logical mind,Dormouse,4
+EN_UILOIR_03,Some are cynical like the cat,Dormouse,4
+EN_UILOIR_04,Others are always late wherever they go.,Dormouse,4
+EN_UILOIR_05,"They all give a meaning to their behaviour, but what meaning do you give to them?",Dormouse,4
+EN_UILOIR_06,end,,
+EN_UICAT1_01,"I just met the March Hare/ What a weird animal!",Cheshire Cat,1
+EN_UICAT1_02,"He lost stuff in the air/ you’ll see it while you fall.",Cheshire Cat,1
+EN_UICAT1_03,"He told me to tell you that it is your business.",Cheshire Cat,1
+EN_UICAT1_04,"How did he know about you? I don’t know... Nonetheless ",Cheshire Cat,1
+EN_UICAT1_05,"You have to gather all the Hare’s cookies and cakes.",Cheshire Cat,1
+EN_UICAT1_06,"Don’t miss them while you fall! Don’t make any mistakes…",Cheshire Cat,1
+EN_UICAT1_07,endphase_3,Cheshire Cat,1
+EN_UICAT2_01,"You learned about physics? Because here in the Hole/",Cheshire Cat,1
+EN_UICAT2_02,"A few of the basics are quite out of control.",Cheshire Cat,1
+EN_UICAT2_03,"Matter and Space have their own behavior.",Cheshire Cat,1
+EN_UICAT2_04,"Do they have consciousness? Or maybe a flavour?",Cheshire Cat,1
+EN_UICAT2_05,"Good luck finding it out but beware of Space.",Cheshire Cat,1
+EN_UICAT2_06,"it can be a bit tight to slip into this mess.",Cheshire Cat,1
+EN_UICAT2_07,endphase_5,Cheshire Cat,1
+EN_UICAT3_01,"Here is the Queen’s missive/ a letter for alice Alice",Cheshire Cat,1
+EN_UICAT3_02,"She says that she has seen in you her nemesis !",Cheshire Cat,1
+EN_UICAT3_03,"I think that she’s thinking that she’s better than you.",Cheshire Cat,1
+EN_UICAT3_04,"Don’t let her thoughts be true! T’would be disapointing",Cheshire Cat,1
+EN_UICAT3_05,"The cards are not in shape... She assigned you the quest",Cheshire Cat,1
+EN_UICAT3_06,"Shaping will be your test before you can escape",Cheshire Cat,1
+EN_UICAT3_07,endphase_7,Cheshire Cat,1
+FR_UITUTO_01,"Bonjour/ ma chère Alice. Bienvenue au terrier",Cheshire Cat,1
+FR_UITUTO_02,"Ici tu vas tomber/ car c'est un précipice",Cheshire Cat,1
+FR_UITUTO_03,Utilise ta souris/ pour pouvoir regarder,Cheshire Cat,1
+FR_UITUTO_04,"Et pour bouger ici, tente ZSQD",Cheshire Cat,1
+FR_UITUTO_05,"Quel désordre ici ! Et toi sans protection ...",Cheshire Cat,1
+FR_UITUTO_06,Il y a trop de fourbi tu dois faire attention.,Cheshire Cat,1
+FR_UITUTO_07,end,,
+FR_UIRABE1_01,"Encore en retard ! en retard ! en retard ! C'est un rendez-vous important",Rabbit,2
+FR_UIRABE1_02,Attends une minute/ tu cherches quoi ici au juste ?,Rabbit,2
+FR_UIRABE1_03,"Pas le temps de dire bonjour/ au revoir ! Tu es la pour boire le thé non ?",Rabbit,2
+FR_UIRABE1_04,Vite vite le thé va refroidir !,Rabbit,2
+FR_UIRABE1_05,end,,
+FR_UIRABE2_01,"Plus vite ! Plus vite ! Plus vite ! Je dois descendre/ elle m'attends déja !",Rabbit,2
+FR_UIRABE2_02,Tu es en retard ? Je le suis !,Rabbit,2
+FR_UIRABE2_03,Attention c'est chez moi ici ! Touche pas à mes affaires,Rabbit,2
+FR_UIRABE2_04,"On s'est déja rencontré ? Je suis en retard ! Tu étais déjà en bas hier.",Rabbit,2
+FR_UIRABE2_05,end,,
+FR_UICARD_01,Où suis-je ?,Card,3
+FR_UICARD_02,Tu es perdue aussi je suppose,Card,3
+FR_UICARD_03,Je me ferais un plaisir de t'aider mais je suis si confus,Card,3
+FR_UICARD_04,Pourquoi tu n'essayerais pas de retomber pour comprendre cet endroit ?,Card,3
+FR_UICARD_05,Si tu reviens explique moi ce bazar,Card,3
+FR_UICARD_06,end,,
+FR_UILOIR_01,Bienvenue dans cet endroit/ j'èspère que tu n'es pas trop confuse,Dormouse,4
+FR_UILOIR_02,Tu sais/ tout le monde ici vit selon sa propre logique et son propre état d'esprit,Dormouse,4
+FR_UILOIR_03,"Certains sont plutôt cynique, comme le chat",Dormouse,4
+FR_UILOIR_04,Tandis que d'autre sont tout le temps en retard et ratent des choses,Dormouse,4
+FR_UILOIR_05,Tout à un sens à leur échelle mais quand tu t'en éloignes les choses sont bien différentes,Dormouse,4
+FR_UILOIR_06,end,,
+FR_UICAT1_01,Je viens de rencontrer le Lièvre de Mars,Cheshire Cat,1
+FR_UICAT1_02,Ses affaires sont tombées dans des lieux épars,Cheshire Cat,1
+FR_UICAT1_03,"Il m'a dit de te dire/ que c'est là ton affaire.",Cheshire Cat,1
+FR_UICAT1_04,"Comment a-t-il pu faire pour savoir te décrire ?",Cheshire Cat,1
+FR_UICAT1_05,Quelle étrange vérité... mais bon passons/ bientôt,Cheshire Cat,1
+FR_UICAT1_06,"Tu devra attraper les cookies et gateaux",Cheshire Cat,1
+FR_UICAT1_07,end,Cheshire Cat,1
+FR_UICAT2_01,Tu connais la Physique ? Car ici au terrier/,Cheshire Cat,1
+FR_UICAT2_02,les lois les plus basiques ont une volonté.,Cheshire Cat,1
+FR_UICAT2_03,La matière et l'espace/ suivent leur commandement.,Cheshire Cat,1
+FR_UICAT2_04,Peuvent-ils faire la grimace ? Ont-t-ils conscience du temps?,Cheshire Cat,1
+FR_UICAT2_05,Bonne chance pour comprendre/ mais attention à toi.,Cheshire Cat,1
+FR_UICAT2_06,Ne te laisse pas surprendre/ le chemin est étroit.,Cheshire Cat,1
+FR_UICAT2_07,end,Cheshire Cat,1
+FR_UICAT3_01,"Une missive que voila ! De la Reine pour Alice/",Cheshire Cat,1
+FR_UICAT3_02,"Elle dit qu'elle voit en toi son némésis",Cheshire Cat,1
+FR_UICAT3_03,"Je pense qu'elle pense qu'elle est meilleure que toi",Cheshire Cat,1
+FR_UICAT3_04,Cela serait la pour moi une déception immense.,Cheshire Cat,1
+FR_UICAT3_05,Les cartes en mauvaises formes ne sont plus très conformes.,Cheshire Cat,1
+FR_UICAT3_06,La reine veut te tester à toi t'imposer,Cheshire Cat,1
+FR_UICAT3_07,end,Cheshire Cat,1

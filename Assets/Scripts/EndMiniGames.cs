@@ -11,14 +11,25 @@ public class EndMiniGames : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            print("stop");
             switch (_miniGameToEnd)
             {
                 case 1:
                     if (MiniGameManager.instance.state == State.TUTO)
                     {
                         StartCoroutine(ObjectSpawner.instance.WaitAndEndTuto());
-                        print("it is stop");
+                    }
+                    break;
+                case 2:
+                    if (MiniGameManager.instance.state == State.FIRSTMG)
+                    {
+                        FirstMiniGame.instance.StopMiniGame();
+                    }
+                    break;
+                case 3:
+                    if (MiniGameManager.instance.state == State.SECONDMG)
+                    {
+                        MiniGameManager.instance.ChangeState(State.NONE);
+                        if (GameManager.instance.onPhaseChange != null) GameManager.instance.onPhaseChange.Invoke(6);
                     }
                     break;
             }

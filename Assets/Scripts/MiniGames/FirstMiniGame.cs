@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FirstMiniGame : MonoBehaviour
 {
-   
+    public static FirstMiniGame instance;
     private int _currentCollectibleInstantiated = 0;
     private MiniGameManager miniGameManager;
 
@@ -15,6 +15,11 @@ public class FirstMiniGame : MonoBehaviour
     [SerializeField] private string[] collectibleTags;
     [SerializeField] private float _collectibleOffsetX;
     [SerializeField] private float _collectibleOffsetY;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -54,10 +59,16 @@ public class FirstMiniGame : MonoBehaviour
         _currentCollectibleInstantiated += 1;
         if (_currentCollectibleInstantiated < numberCollectibleTotal)
             StartCoroutine(FirstMinigame());
-        else
-        {
-            StartCoroutine(WaitAndEndFirstMiniGame());
-        }
+        //else
+        //{
+        //    StartCoroutine(WaitAndEndFirstMiniGame());
+        //}
+    }
+
+    public void StopMiniGame()
+    {
+        StopAllCoroutines();
+        CheckIfMiniGamePassed();
     }
 
     private void CheckIfMiniGamePassed()

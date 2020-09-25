@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DialogueReader.instance.CheckDialogue("BLA", 1);
+        DialogueReader.instance.CheckDialogue("UITUTO", 1);
 
         onPhaseChange += (int stateId) =>
         {
@@ -31,22 +31,25 @@ public class GameManager : MonoBehaviour
                     MiniGameManager.instance.ChangeState(State.TUTO);
                     break;
                 case 2:
-                    DialogueReader.instance.CheckDialogue("FMG", 1);
+                    DialogueReader.instance.CheckDialogue("UICAT1", 1);
                     break;
                 case 3:
                     MiniGameManager.instance.ChangeState(State.TRANSITION);
                     break;
                 case 4:
-                    DialogueReader.instance.CheckDialogue("SMG", 1);
+                    DialogueReader.instance.CheckDialogue("UICAT2", 1);
                     break;
                 case 5:
                     MiniGameManager.instance.ChangeState(State.SECONDMG);
                     break;
                 case 6:
-                    DialogueReader.instance.CheckDialogue("TMG", 1);
+                    DialogueReader.instance.CheckDialogue("UICAT3", 1);
                     break;
                 case 7:
                     MiniGameManager.instance.ChangeState(State.THIRDMG);
+                    break;
+                case 8:
+                    DialogueReader.instance.CheckDialogue("FMG", 1);
                     break;
             }
         };
@@ -55,7 +58,7 @@ public class GameManager : MonoBehaviour
         {
             if(MiniGameManager.instance.state == State.NONE)
             {
-                _teleporterInScene = Instantiate(_teleporter, PlayerEntity.instance.transform.position + new Vector3(0, 0, 5), Quaternion.identity);
+                _teleporterInScene = Instantiate(_teleporter, PlayerEntity.instance.transform.position + new Vector3(0, 0, 3), Quaternion.identity);
             }
             else
             {
@@ -70,7 +73,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator WaitAndInstantiateTeleporter()
     {
         yield return new WaitForSeconds(0.3f);
-        _teleporterInScene = Instantiate(_teleporter, PlayerEntity.instance.transform.position + new Vector3(0, 0, 5), Quaternion.identity);
+        _teleporterInScene = Instantiate(_teleporter, PlayerEntity.instance.transform.position + new Vector3(0, 0, 3), Quaternion.identity);
     }
 
     // Update is called once per frame

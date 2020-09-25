@@ -720,7 +720,7 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: ENG
+    - m_Text: EN
       m_Image: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
     - m_Text: FR
       m_Image: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
