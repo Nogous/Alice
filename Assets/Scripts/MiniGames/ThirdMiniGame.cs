@@ -46,12 +46,12 @@ public class ThirdMiniGame : MonoBehaviour
             if (miniGameManager.state == State.THIRDMG)
             {
                 numberShapeInstantiated = 0;
-                shapeHolder = Instantiate(shapeHolderPrefab).transform;
-                shapeHolder.GetComponent<PathCreation.Examples.PathFollower>().pathCreator = MasterPath.instance.mainPath;
-                shapeHolder.GetComponent<PathCreation.Examples.PathFollower>().distanceTravelled = MasterPath.instance.playerPathFollower.distanceTravelled + MasterPath.instance.playerPathFollower.pathOffset;
+                //shapeHolder = Instantiate(shapeHolderPrefab).transform;
+                //shapeHolder.GetComponent<PathCreation.Examples.PathFollower>().pathCreator = MasterPath.instance.mainPath;
+                //shapeHolder.GetComponent<PathCreation.Examples.PathFollower>().distanceTravelled = MasterPath.instance.playerPathFollower.distanceTravelled + MasterPath.instance.playerPathFollower.pathOffset;
 
                 // reference pathfollower in player
-                PlayerEntity.instance.followers.Add(shapeHolder.GetComponent<PathCreation.Examples.PathFollower>());
+               // PlayerEntity.instance.followers.Add(shapeHolder.GetComponent<PathCreation.Examples.PathFollower>());
                 InstantiateShape();
             }
         };
@@ -68,7 +68,7 @@ public class ThirdMiniGame : MonoBehaviour
 
     private void InstantiateShape()
     {
-        currentShape = Instantiate(shapes[Random.Range(0, shapes.Length)], shapeHolder).transform;
+        currentShape = Instantiate(shapes[Random.Range(0, shapes.Length)], shapeHolderPrefab.transform).transform;
         shouldLoop = currentShape.GetComponent<ShapeInfo>().loop;
         triggers = currentShape.GetComponent<ShapeInfo>().triggers;
         _firstTriggerId = 0;
