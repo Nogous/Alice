@@ -252,15 +252,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c154f9547d3a6c545bb77ed1a53138d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minBetweenCollectible: 2
-  maxBetweenCollectible: 4
-  numberCollectibleTotal: 10
-  numberCollectibleToPass: 3
+  minBetweenCollectible: 1.5
+  maxBetweenCollectible: 3
   collectibleTags:
   - Cake
   - Cookie
   _collectibleOffsetX: 0.75
   _collectibleOffsetY: 0.75
+  ignoreThisMiniGame: 0
 --- !u!114 &4370278639178328739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,7 +272,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 691d082a1c27b0742b68cfbdf9f63a2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _infoPanel: {fileID: 0}
+  _gameStructure: []
+  ignoreThisMiniGame: 0
 --- !u!114 &6491477589158909778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,8 +291,7 @@ MonoBehaviour:
   - {fileID: 7834558519959742956, guid: a25351a2c27e7cf448c43f9b6c9fd7c7, type: 3}
   shapeHolderPrefab: {fileID: 0}
   numberOfShapeToInstantiate: 3
-  minBetweenShape: 1
-  maxBetweenShape: 4
+  timeBetweenShape: 1
 --- !u!1001 &3307554570760614552
 PrefabInstance:
   m_ObjectHideFlags: 0

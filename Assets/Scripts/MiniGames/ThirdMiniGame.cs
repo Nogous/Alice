@@ -12,8 +12,7 @@ public class ThirdMiniGame : MonoBehaviour
     [SerializeField] private GameObject[] shapes;
     [SerializeField] private GameObject shapeHolderPrefab;
     [SerializeField] private int numberOfShapeToInstantiate = 5;
-    [SerializeField] private float minBetweenShape = 1;
-    [SerializeField] private float maxBetweenShape = 4;
+    [SerializeField] private float timeBetweenShape = 1;
     private int numberShapeInstantiated = 0;
     private Transform shapeHolder;
     private Transform currentShape;
@@ -45,6 +44,7 @@ public class ThirdMiniGame : MonoBehaviour
         {
             if (miniGameManager.state == State.THIRDMG)
             {
+                print("miaou");
                 numberShapeInstantiated = 0;
                 //shapeHolder = Instantiate(shapeHolderPrefab).transform;
                 //shapeHolder.GetComponent<PathCreation.Examples.PathFollower>().pathCreator = MasterPath.instance.mainPath;
@@ -195,7 +195,7 @@ public class ThirdMiniGame : MonoBehaviour
 
     IEnumerator WaitAndInstantiateShape()
     {
-        yield return new WaitForSeconds(Random.Range(minBetweenShape, maxBetweenShape));
+        yield return new WaitForSeconds(timeBetweenShape);
         InstantiateShape();
     }
 }

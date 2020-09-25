@@ -2226,6 +2226,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4658127761440680165}
+  - component: {fileID: 339762777}
   m_Layer: 10
   m_Name: Minijeu2
   m_TagString: Untagged
@@ -2271,6 +2272,41 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &339762777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4658127761440680170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96f45fd6919040b42a50622e57a7aee5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacles:
+  - {fileID: 4658127761694488303}
+  - {fileID: 4658127760136293351}
+  - {fileID: 4658127761364179780}
+  - {fileID: 4658127759934984482}
+  - {fileID: 4658127761733607787}
+  - {fileID: 4658127759689065570}
+  - {fileID: 4658127759800911329}
+  - {fileID: 4658127760919253826}
+  - {fileID: 4658127761041201468}
+  - {fileID: 4658127761099906441}
+  - {fileID: 4658127760658484684}
+  - {fileID: 4658127761173131434}
+  - {fileID: 4658127760199967396}
+  - {fileID: 4658127761158204700}
+  - {fileID: 4658127760799262599}
+  - {fileID: 4658127761392714618}
+  - {fileID: 4658127760844361080}
+  - {fileID: 4658127760767996894}
+  - {fileID: 4658127761071951298}
+  - {fileID: 4658127760566443541}
+  - {fileID: 4658127760377717425}
+  - {fileID: 4658127761144707226}
 --- !u!1 &4658127761694488303
 GameObject:
   m_ObjectHideFlags: 0

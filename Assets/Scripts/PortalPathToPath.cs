@@ -20,7 +20,8 @@ public class PortalPathToPath : MonoBehaviour
                     MiniGameManager.instance.ChangeState(State.FIRSTMG);
                     break;
                 case 3:
-                    MiniGameManager.instance.ChangeState(State.THIRDMG);
+                    if(MiniGameManager.instance.state != State.THIRDMG)
+                        MiniGameManager.instance.ChangeState(State.THIRDMG);
                     break;
             }
             gameObject.SetActive(false);

@@ -95,7 +95,6 @@ public class FirstMiniGame : MonoBehaviour
 
     public void StopMiniGame()
     {
-        print("miaou");
         StopAllCoroutines();
         CheckIfMiniGamePassed();
     }
