@@ -16,6 +16,6 @@ public class CameraRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(Vector3.forward * _speed * Time.deltaTime);
+            transform.Rotate(Vector3.forward * _speed * Time.deltaTime);
     }
 }
