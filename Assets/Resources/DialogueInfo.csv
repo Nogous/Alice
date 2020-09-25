@@ -1,5 +1,5 @@
 Loca key,Dialog,Name,ID PERSO
-EN_UITUTO_01,Hello/ my dear Alice/ and welcome to the Hole,Cheshire Cat,1
+EN_UITUTO_01,"Hello/ my dear Alice/ and welcome to the Hole",Cheshire Cat,1
 EN_UITUTO_02,"But beware the fall/ you’re in a precipice.",Cheshire Cat,1
 EN_UITUTO_03,"Use the mouse to look around/ ZSQD to move.",Cheshire Cat,1
 EN_UITUTO_04,"If you want to one day touch the ground/ those are the skills you need to improve",Cheshire Cat,1
@@ -28,7 +28,7 @@ EN_UILOIR_03,Some are cynical like the cat,Dormouse,4
 EN_UILOIR_04,Others are always late wherever they go.,Dormouse,4
 EN_UILOIR_05,"They all give a meaning to their behaviour, but what meaning do you give to them?",Dormouse,4
 EN_UILOIR_06,end,,
-EN_UICAT1_01,"I just met the March Hare/ What a weird animal!",Cheshire Cat,1
+EN_UICAT1_01,"I just met the March Hare/ what a weird animal!",Cheshire Cat,1
 EN_UICAT1_02,"He lost stuff in the air/ you’ll see it while you fall.",Cheshire Cat,1
 EN_UICAT1_03,"He told me to tell you that it is your business.",Cheshire Cat,1
 EN_UICAT1_04,"How did he know about you? I don’t know... Nonetheless ",Cheshire Cat,1
@@ -49,17 +49,17 @@ EN_UICAT3_04,"Don’t let her thoughts be true! T’would be disapointing",Chesh
 EN_UICAT3_05,"The cards are not in shape... She assigned you the quest",Cheshire Cat,1
 EN_UICAT3_06,"Shaping will be your test before you can escape",Cheshire Cat,1
 EN_UICAT3_07,endphase_7,Cheshire Cat,1
-FR_UITUTO_01,"Bonjour/ ma chère Alice. Bienvenue au terrier",Cheshire Cat,1
-FR_UITUTO_02,"Ici tu vas tomber/ car c'est un précipice",Cheshire Cat,1
-FR_UITUTO_03,Utilise ta souris/ pour pouvoir regarder,Cheshire Cat,1
-FR_UITUTO_04,"Et pour bouger ici, tente ZSQD",Cheshire Cat,1
-FR_UITUTO_05,"Quel désordre ici ! Et toi sans protection ...",Cheshire Cat,1
-FR_UITUTO_06,Il y a trop de fourbi tu dois faire attention.,Cheshire Cat,1
-FR_UITUTO_07,end,,
-FR_UIRABE1_01,"Encore en retard ! en retard ! en retard ! C'est un rendez-vous important",Rabbit,2
+FR_UITUTO_01,"Bonjour/ ma chère Alice. Bienvenue au terrier.",Chat du Cheshire,1
+FR_UITUTO_02,"Ici tu vas tomber/ car c'est un précipice.",Chat du Cheshire,1
+FR_UITUTO_03,Utilise ta souris/ pour pouvoir regarder.,Chat du Cheshire,1
+FR_UITUTO_04,"Et pour bouger ici, tente ZSQD.",Chat du Cheshire,1
+FR_UITUTO_05,"Quel désordre ici ! Et toi sans protection ...",Chat du Cheshire,1
+FR_UITUTO_06,Il y a trop de fourbi/ tu dois faire attention.,Chat du Cheshire,1
+FR_UITUTO_07,endphase_1,,
+FR_UIRABE1_01,"Encore en retard ! En retard ! En retard ! C'est un rendez-vous important",Rabbit,2
 FR_UIRABE1_02,Attends une minute/ tu cherches quoi ici au juste ?,Rabbit,2
-FR_UIRABE1_03,"Pas le temps de dire bonjour/ au revoir ! Tu es la pour boire le thé non ?",Rabbit,2
-FR_UIRABE1_04,Vite vite le thé va refroidir !,Rabbit,2
+FR_UIRABE1_03,"Pas le temps de dire bonjour/ au revoir ! Tu es là pour boire le thé non ?",Rabbit,2
+FR_UIRABE1_04,Vite/ vite/ le thé va refroidir !,Rabbit,2
 FR_UIRABE1_05,end,,
 FR_UIRABE2_01,"Plus vite ! Plus vite ! Plus vite ! Je dois descendre/ elle m'attends déja !",Rabbit,2
 FR_UIRABE2_02,Tu es en retard ? Je le suis !,Rabbit,2
@@ -78,24 +78,24 @@ FR_UILOIR_03,"Certains sont plutôt cynique, comme le chat",Dormouse,4
 FR_UILOIR_04,Tandis que d'autre sont tout le temps en retard et ratent des choses,Dormouse,4
 FR_UILOIR_05,Tout à un sens à leur échelle mais quand tu t'en éloignes les choses sont bien différentes,Dormouse,4
 FR_UILOIR_06,end,,
-FR_UICAT1_01,Je viens de rencontrer le Lièvre de Mars,Cheshire Cat,1
-FR_UICAT1_02,Ses affaires sont tombées dans des lieux épars,Cheshire Cat,1
-FR_UICAT1_03,"Il m'a dit de te dire/ que c'est là ton affaire.",Cheshire Cat,1
-FR_UICAT1_04,"Comment a-t-il pu faire pour savoir te décrire ?",Cheshire Cat,1
-FR_UICAT1_05,Quelle étrange vérité... mais bon passons/ bientôt,Cheshire Cat,1
-FR_UICAT1_06,"Tu devra attraper les cookies et gateaux",Cheshire Cat,1
-FR_UICAT1_07,end,Cheshire Cat,1
-FR_UICAT2_01,Tu connais la Physique ? Car ici au terrier/,Cheshire Cat,1
-FR_UICAT2_02,les lois les plus basiques ont une volonté.,Cheshire Cat,1
-FR_UICAT2_03,La matière et l'espace/ suivent leur commandement.,Cheshire Cat,1
-FR_UICAT2_04,Peuvent-ils faire la grimace ? Ont-t-ils conscience du temps?,Cheshire Cat,1
-FR_UICAT2_05,Bonne chance pour comprendre/ mais attention à toi.,Cheshire Cat,1
-FR_UICAT2_06,Ne te laisse pas surprendre/ le chemin est étroit.,Cheshire Cat,1
-FR_UICAT2_07,end,Cheshire Cat,1
-FR_UICAT3_01,"Une missive que voila ! De la Reine pour Alice/",Cheshire Cat,1
-FR_UICAT3_02,"Elle dit qu'elle voit en toi son némésis",Cheshire Cat,1
-FR_UICAT3_03,"Je pense qu'elle pense qu'elle est meilleure que toi",Cheshire Cat,1
-FR_UICAT3_04,Cela serait la pour moi une déception immense.,Cheshire Cat,1
-FR_UICAT3_05,Les cartes en mauvaises formes ne sont plus très conformes.,Cheshire Cat,1
-FR_UICAT3_06,La reine veut te tester à toi t'imposer,Cheshire Cat,1
-FR_UICAT3_07,end,Cheshire Cat,1
+FR_UICAT1_01,Je viens de rencontrer le Lièvre de Mars.,Chat du Cheshire,1
+FR_UICAT1_02,Ses affaires sont tombées dans des lieux épars.,Chat du Cheshire,1
+FR_UICAT1_03,"Il m'a dit de te dire/ que c'est là ton affaire.",Chat du Cheshire,1
+FR_UICAT1_04,"Comment a-t-il pu faire pour savoir te décrire ?",Chat du Cheshire,1
+FR_UICAT1_05,Quelle étrange vérité... mais bon passons/ bientôt/,Chat du Cheshire,1
+FR_UICAT1_06,"Tu devra attraper les cookies et gateaux",Chat du Cheshire,1
+FR_UICAT1_07,endphase_3,,
+FR_UICAT2_01,Connais-tu la physique ? Car ici au terrier/,Chat du Cheshire,1
+FR_UICAT2_02,Les lois les plus basiques ont une volonté.,Chat du Cheshire,1
+FR_UICAT2_03,La matière et l'espace/ suivent leur propre commandement.,Chat du Cheshire,1
+FR_UICAT2_04,Peuvent-ils faire la grimace ? Ont-t-ils conscience du temps?,Chat du Cheshire,1
+FR_UICAT2_05,Bonne chance pour comprendre/ mais attention à toi.,Chat du Cheshire,1
+FR_UICAT2_06,Ne te laisse pas surprendre/ le chemin est étroit.,Chat du Cheshire,1
+FR_UICAT2_07,endphase_5,Chat du Cheshire,1
+FR_UICAT3_01,"Une missive que voila/ de la Reine pour Alice!",Chat du Cheshire,1
+FR_UICAT3_02,"Elle dit qu'elle voit en toi son némésis!",Chat du Cheshire,1
+FR_UICAT3_03,Je pense qu'elle se croit meilleure que toi!,Chat du Cheshire,1
+FR_UICAT3_04,Cela serait la pour moi une déception immense.,Chat du Cheshire,1
+FR_UICAT3_05,Les cartes en mauvaises formes ne sont plus très conformes.,Chat du Cheshire,1
+FR_UICAT3_06,La reine veut te tester/ à toi de t'imposer !,Chat du Cheshire,1
+FR_UICAT3_07,endphase_7,Chat du Cheshire,1
