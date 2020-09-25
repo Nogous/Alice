@@ -41,4 +41,14 @@ public class Life : MonoBehaviour
 
         indexLife++;
     }
+
+    public bool CheckSecretEnd()
+    {
+        if (indexLife == 0)
+        {
+            return true;
+        }
+
+        return false;
+    }
 }
