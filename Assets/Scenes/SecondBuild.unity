@@ -438,6 +438,21 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5490884279546295192, guid: bb2ed2c8cabf6f544859c102a9fc0e63,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1.0541339
+      objectReference: {fileID: 0}
+    - target: {fileID: 5490884279546295192, guid: bb2ed2c8cabf6f544859c102a9fc0e63,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -2.4074875e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5490884279546295192, guid: bb2ed2c8cabf6f544859c102a9fc0e63,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.02706647
+      objectReference: {fileID: 0}
     - target: {fileID: 5644257810902496523, guid: bb2ed2c8cabf6f544859c102a9fc0e63,
         type: 3}
       propertyPath: m_Name
@@ -3640,6 +3655,11 @@ PrefabInstance:
       propertyPath: spawnerDistance
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 3307554570305341083, guid: e82ac93fb9c83dc4a8a3e0342605bd36,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3307554570349706142, guid: e82ac93fb9c83dc4a8a3e0342605bd36,
         type: 3}
       propertyPath: _dialoguePanel
@@ -4675,6 +4695,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5490884279546295192, guid: bb2ed2c8cabf6f544859c102a9fc0e63,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1.091473
+      objectReference: {fileID: 0}
+    - target: {fileID: 5490884279546295192, guid: bb2ed2c8cabf6f544859c102a9fc0e63,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.0000000017793772
+      objectReference: {fileID: 0}
+    - target: {fileID: 5490884279546295192, guid: bb2ed2c8cabf6f544859c102a9fc0e63,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.045735955
       objectReference: {fileID: 0}
     - target: {fileID: 5644257810902496523, guid: bb2ed2c8cabf6f544859c102a9fc0e63,
         type: 3}
@@ -5941,6 +5976,16 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5490884279546295192, guid: bb2ed2c8cabf6f544859c102a9fc0e63,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.0899584
+      objectReference: {fileID: 0}
+    - target: {fileID: 5490884279546295192, guid: bb2ed2c8cabf6f544859c102a9fc0e63,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0.044978645
+      objectReference: {fileID: 0}
     - target: {fileID: 5644257810902496523, guid: bb2ed2c8cabf6f544859c102a9fc0e63,
         type: 3}
       propertyPath: m_Name
@@ -6034,6 +6079,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5490884279546295192, guid: bb2ed2c8cabf6f544859c102a9fc0e63,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.2140149
+      objectReference: {fileID: 0}
+    - target: {fileID: 5490884279546295192, guid: bb2ed2c8cabf6f544859c102a9fc0e63,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.10700708
       objectReference: {fileID: 0}
     - target: {fileID: 5644257810902496523, guid: bb2ed2c8cabf6f544859c102a9fc0e63,
         type: 3}
@@ -6853,6 +6908,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5490884279546295192, guid: bb2ed2c8cabf6f544859c102a9fc0e63,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1.146312
+      objectReference: {fileID: 0}
+    - target: {fileID: 5490884279546295192, guid: bb2ed2c8cabf6f544859c102a9fc0e63,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 1.8500002e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5490884279546295192, guid: bb2ed2c8cabf6f544859c102a9fc0e63,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.0731545
       objectReference: {fileID: 0}
     - target: {fileID: 5644257810902496523, guid: bb2ed2c8cabf6f544859c102a9fc0e63,
         type: 3}
