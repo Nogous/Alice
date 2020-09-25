@@ -1121,7 +1121,7 @@ PrefabInstance:
     - target: {fileID: 2781175532223923807, guid: e82ac93fb9c83dc4a8a3e0342605bd36,
         type: 3}
       propertyPath: ignoreThisMiniGame
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2814725671598403547, guid: e82ac93fb9c83dc4a8a3e0342605bd36,
         type: 3}
@@ -1336,7 +1336,7 @@ PrefabInstance:
     - target: {fileID: 4370278639178328739, guid: e82ac93fb9c83dc4a8a3e0342605bd36,
         type: 3}
       propertyPath: ignoreThisMiniGame
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4370278639178328739, guid: e82ac93fb9c83dc4a8a3e0342605bd36,
         type: 3}
@@ -1383,16 +1383,6 @@ PrefabInstance:
       propertyPath: mainPath
       value: 
       objectReference: {fileID: 887950129}
-    - target: {fileID: 6965514348251807171, guid: e82ac93fb9c83dc4a8a3e0342605bd36,
-        type: 3}
-      propertyPath: minTimeBetweenObstacles
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 6965514348251807171, guid: e82ac93fb9c83dc4a8a3e0342605bd36,
-        type: 3}
-      propertyPath: maxTimeBetweenObstacles
-      value: 69
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e82ac93fb9c83dc4a8a3e0342605bd36, type: 3}
 --- !u!4 &884465543 stripped
