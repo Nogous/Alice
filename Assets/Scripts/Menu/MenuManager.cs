@@ -17,7 +17,7 @@ public class MenuManager : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene("FirstBuildScene");
+        SceneManager.LoadScene("SecondBuild");
     }
 
     public void GoToBasePanel()

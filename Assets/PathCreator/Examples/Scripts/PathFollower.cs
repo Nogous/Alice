@@ -51,7 +51,7 @@ namespace PathCreation.Examples
         public void SetDistanceInPath(float _distanceTravelled)
         {
             _followPathRotation = true;
-            distanceTravelled = _distanceTravelled;
+            distanceTravelled = _distanceTravelled + pathOffset;
             transform.position = pathCreator.path.GetPointAtDistance(_distanceTravelled, endOfPathInstruction);
             transform.rotation = pathCreator.path.GetRotationAtDistance(_distanceTravelled, endOfPathInstruction);
             StartCoroutine(WaitAndCanRotate());

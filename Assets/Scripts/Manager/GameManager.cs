@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
                     DialogueReader.instance.CheckDialogue("FMG", 1);
                     break;
                 case 3:
-                    MiniGameManager.instance.ChangeState(State.FIRSTMG);
+                    MiniGameManager.instance.ChangeState(State.TRANSITION);
                     break;
                 case 4:
                     DialogueReader.instance.CheckDialogue("SMG", 1);

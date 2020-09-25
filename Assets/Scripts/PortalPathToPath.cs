@@ -5,6 +5,7 @@ using UnityEngine;
 public class PortalPathToPath : MonoBehaviour
 {
     public int idNextPath;
+    public int miniGameToStart;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,6 +14,13 @@ public class PortalPathToPath : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             MasterPath.instance.SwitchMainPath(idNextPath);
+            switch (miniGameToStart)
+            {
+                case 2:
+                    print("miaou");
+                    MiniGameManager.instance.ChangeState(State.FIRSTMG);
+                    break;
+            }
             gameObject.SetActive(false);
         }
     }

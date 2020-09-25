@@ -129,7 +129,7 @@ public class ObjectSpawner : MonoBehaviour
         Vector3 newRotation = new Vector3(Random.Range(-90, 90), Random.Range(-90, 90), Random.Range(-90, 90));
         obj.GetComponent<Obstacle>().SetChildOffset(newOffset);
         obj.GetComponent<Obstacle>().SetChildRotation(newRotation);
-        obj.GetComponent<PathCreation.Examples.PathFollower>().pathCreator = mainPath;
+        obj.GetComponent<PathCreation.Examples.PathFollower>().pathCreator = MasterPath.instance.mainPath;
         PathCreation.Examples.PathFollower spawnParentFollower = obstacleSpawnPoint.parent.GetComponent<PathCreation.Examples.PathFollower>();
         obj.GetComponent<PathCreation.Examples.PathFollower>().distanceTravelled = spawnParentFollower.distanceTravelled + spawnParentFollower.pathOffset;
     }

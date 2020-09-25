@@ -44,7 +44,7 @@ public class MasterPath : MonoBehaviour
         playerPathFollower.SetDistanceInPath(0);
 
         obstacleSpawner.SetPathCreator(mainPath);
-        obstacleSpawner.SetPathOffset(spawnerDistance);
+        obstacleSpawner.SetDistanceInPath(0);
 
         obstacleDestroyer.SetPathCreator(mainPath);
         obstacleDestroyer.SetPathOffset(destroyerDistance);

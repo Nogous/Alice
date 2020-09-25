@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum State { NONE, FIRSTMG, SECONDMG, THIRDMG, FOURTHMG, TUTO, DEAD}
+public enum State { NONE, FIRSTMG, SECONDMG, THIRDMG, FOURTHMG, TUTO, DEAD, TRANSITION}
 public class MiniGameManager : MonoBehaviour
 {
 
