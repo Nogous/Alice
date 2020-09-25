@@ -8,8 +8,8 @@ public class AliceTeleporter : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            PathCreation.Examples.PathFollower playerFollower = other.GetComponent<PathCreation.Examples.PathFollower>();
-            playerFollower.SetDistanceInPath(playerFollower.distanceTravelled - 10);
+            PathCreation.Examples.PathFollower playerFollower = other.transform.parent.GetComponent<PathCreation.Examples.PathFollower>();
+            playerFollower.SetDistanceInPath(playerFollower.distanceTravelled - 10, true);
         }
     }
 }
